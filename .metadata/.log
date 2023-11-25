@@ -1269,3 +1269,16 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2023-11-25 18:02:53.646
 !MESSAGE Indexed 'PRACT1' (19 sources, 81 headers) in 4.43 sec: 4,234 declarations; 17,738 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0091%)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 4 0 2023-11-25 18:08:49.438
+!MESSAGE Stackanalyzer failed to analyze input
+!STACK 0
+java.lang.Exception: File: C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\Practica1\Debug\Practica1.elfdo not exists
+	at com.st.stm32cube.ide.mcu.utils.assembly.Disassembler.<init>(Disassembler.java:56)
+	at com.st.stm32cube.ide.mcu.utils.assembly.Disassembler.<init>(Disassembler.java:83)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:954)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1307)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-11-25 18:09:53.010
+!MESSAGE Indexed 'PRAC2' (19 sources, 81 headers) in 2.1 sec: 4,234 declarations; 17,738 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0091%)
