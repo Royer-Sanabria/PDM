@@ -1251,3 +1251,18 @@ java.io.FileNotFoundException: C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\P
 
 !ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-25 17:18:11.355
 !MESSAGE Existing sessions are:
+!SESSION 2023-11-25 17:50:56.663 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-11-25 17:51:17.412
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-11-25 17:51:17.422
+!MESSAGE Log4j2 initialized with config file C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-25 17:51:28.124
+!MESSAGE Started RMI Server, listening on port 41337
