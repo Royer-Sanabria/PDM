@@ -93,15 +93,18 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 	delay_t Retardo;
+	tick_t period[]={50,100,500};
+	tick_t step =1;
+	tick_t Number_cicles=0;
+tick_t final_cicles=10;
 
-delayInit(&Retardo, 100);
+	delayInit(&Retardo, 1000);
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
@@ -123,10 +126,64 @@ delayInit(&Retardo, 100);
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  switch (step){
+	  case 1:
+		  delayInit(&Retardo, period[0]);
+		while (step==1){
 	  if(delayRead(&Retardo))
-		  {
-	    	HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-	      }
+		 {
+		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+		Number_cicles++;
+				if (Number_cicles>=final_cicles)
+				{
+					step=2;
+					Number_cicles=0;
+				}
+		 }}
+		break;
+
+	  case 2:
+		  delayInit(&Retardo, period[1]);
+		while (step==2){
+	  if(delayRead(&Retardo))
+		 {
+		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+		Number_cicles ++;
+				if (Number_cicles>=final_cicles)
+				{
+					step=3;
+					Number_cicles=0;
+				}
+		 }}
+		break;
+
+	  case 3:
+	 		  delayInit(&Retardo, period[2]);
+	 		while (step==3){
+	 	  if(delayRead(&Retardo))
+	 		 {
+	 		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+	 		Number_cicles++;
+	 				if (Number_cicles>=final_cicles)
+	 				{
+	 					step=1;
+	 					Number_cicles=0;
+	 				}
+	 		 }}
+	 		break;
+
+	  default:
+		  step=1;
+		  Number_cicles=0;
+
+	  }
+
+
+
+
+
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
