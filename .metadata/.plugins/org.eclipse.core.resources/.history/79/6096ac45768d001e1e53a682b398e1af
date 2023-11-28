@@ -1,0 +1,59 @@
+/*
+ * API_debounce.c
+ *
+ *  Created on: Nov 26, 2023
+ *      Author: Royer Sanabria
+ */
+
+#include "API_debounce.h"
+#include "API_delay.h"
+#include "main.h"
+#include "stm32f4xx_hal.h"
+
+
+void debounceFSM_update(){
+	debounceState_t status_button_provitional;
+	control_t control_MEF;
+	control_MEF=0;
+	status_button_provitional=buttonUp;
+
+	while (0==control_MEF){
+		switch (status_button_provitional){
+
+		case buttonUp:
+
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, SET);
+			break;
+
+		case buttonDown:
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, SET);
+			break;
+
+		case buttonFalling:
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, SET);
+			break;
+
+		case buttonRising:
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, SET);
+			break;
+
+		default:
+			status_button_provitional=buttonUp;
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, SET);
+		}
+
+
+	}
+}
+
+void debounceFSM_init(){
+
+};
+
+void readKey(){
+
+};
+
+
+
+

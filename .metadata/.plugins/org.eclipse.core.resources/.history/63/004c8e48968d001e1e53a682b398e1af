@@ -1,0 +1,49 @@
+/*
+ * API_debounce.c
+ *
+ *  Created on: Nov 26, 2023
+ *      Author: Royer Sanabria
+ */
+
+#include "API_debounce.h"
+#include "API_delay.h"
+static uint32_t delay_control=3000;
+debounceState_t status_button;
+static delay_t Retardo;
+
+void debounceFSM_init(void){
+	delayInit(&Retardo,delay_control);
+	status_button=buttonUp;
+}
+
+void debounceFSM_update(){
+
+	switch (status_button){
+		case buttonUp:
+			if(SET==HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)){
+
+				if(delayRead(&Retardo)){
+					if(SET==HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)){
+						HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, SET);
+
+
+					}
+				}
+
+
+
+			}
+			else{
+				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, RESET);
+
+			}
+		break;
+
+		default:
+
+	}
+}
+
+
+void buttonPressed();
+void buttonReleased();

@@ -1,0 +1,85 @@
+/*
+ * API_debounce.c
+ *
+ *  Created on: Nov 26, 2023
+ *      Author: Royer Sanabria
+ */
+
+#include "API_debounce.h"
+#include "API_delay.h"
+#include "main.h"
+
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+HAL_Init();
+
+void debounceFSM_update(){
+	debounceState_t status_button_provitional;
+	control_t control_MEF;
+	debounceFSM_init();
+	control_MEF=0;
+
+	while (0==control_MEF){
+		switch (status_button_provitional){
+
+		case buttonUp:
+			HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13);
+				if(RESET==GPIO_ReadPin(GPIOC, GPIO_PIN_13)){
+					HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+				}
+
+			break;
+
+		case buttonDown:
+			break;
+
+		case buttonFalling:
+			break;
+
+		case buttonRising:
+			break;
+
+		default:
+			status_button_provitional=buttonUp;
+		}
+
+
+	}
+}
+
+void debounceFSM_init(){
+
+};
+
+void readKey(){
+
+};
+
+
+
+
+static void MX_GPIO_Init(void)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+/* USER CODE BEGIN MX_GPIO_Init_1 */
+/* USER CODE END MX_GPIO_Init_1 */
+
+  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : PC13 */
+  GPIO_InitStruct.Pin = GPIO_PIN_13;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PA5 */
+  GPIO_InitStruct.Pin = GPIO_PIN_5;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);

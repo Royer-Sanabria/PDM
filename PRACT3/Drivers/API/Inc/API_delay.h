@@ -19,14 +19,19 @@
 
 typedef uint32_t tick_t;
 typedef bool bool_t;
-typedef struct{ // defino la estructura de los datos
+typedef struct{
 	tick_t startTime;
 	tick_t duration;
 	bool_t running;
 }delay_t;
 
-void delayInit (delay_t*delay, tick_t duration); //defino solamente la función
+
+void delayInit (delay_t*delay, tick_t duration);
+
+
 bool_t delayRead(delay_t*delay);
+
+
 void delayWrite(delay_t*delay, tick_t duration);
 
 

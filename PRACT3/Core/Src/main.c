@@ -23,7 +23,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <API_delay.h>
-//ff
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
