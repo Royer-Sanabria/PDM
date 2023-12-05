@@ -18,14 +18,21 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "usart.h"
+#include "gpio.h"
+#define BUFFER_SIZE 3
+
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stm32f4xx_hal.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+
+char received_buffer[BUFFER_SIZE];
+ uint8_t buffer_index = 0;
 
 /* USER CODE END PTD */
 
@@ -42,13 +49,12 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+void process_received_data(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -72,7 +78,9 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  char data_to_send = 'A';
+#define BUFFER_SIZE 4
+char rx_buffer[BUFFER_SIZE];
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -83,6 +91,8 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -91,7 +101,22 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
+	 HAL_UART_Receive(&huart2, (uint8_t *)rx_buffer, 4, HAL_MAX_DELAY);
+
+
+	 if (strncmp(rx_buffer, "LIGH", 4) == 0){
+		 HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, SET);
+
+	 }
+	 else if (strncmp(rx_buffer, "LOW1", 4) == 0){
+		 HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, RESET);
+			 }
+
+
+	 rx_buffer[0]= '\0';
+
+
+	  /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }
@@ -140,7 +165,13 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void process_received_data(void) {
+  // Verificar si se recibió el carácter 'L'
+  if (received_buffer[0] == 'L') {
+    // Encender el LED (asumimos que el LED está conectado al pin GPIO_PIN_13)
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET);
+  }
+}
 /* USER CODE END 4 */
 
 /**

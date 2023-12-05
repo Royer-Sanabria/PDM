@@ -1,0 +1,12 @@
+/*
+ * API_Uart.c
+ *
+ *  Created on: Dec 3, 2023
+ *      Author: Royer Sanabria
+ */
+
+
+bool_t void UART_Recipe(){
+
+}
+

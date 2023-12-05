@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;PROYECTO_FINAL/Drivers/API/Inc/API_UART.h&apos; to &apos;API_Uart.h&apos;" description="Rename resource &apos;API_UART.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Drivers/API/Inc/API_UART.h" name="API_Uart.h" stamp="1701628708482" updateReferences="true"/>
+</session>

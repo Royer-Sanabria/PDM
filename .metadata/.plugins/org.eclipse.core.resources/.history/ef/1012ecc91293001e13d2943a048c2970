@@ -1,0 +1,104 @@
+/*
+ * API_Uart.c
+ *
+ *  Created on: Dec 3, 2023
+ *      Author: Royer Sanabria
+ */
+#include "main.h"
+#include "API_UART.h"
+#include <stdlib.h>
+#include <string.h>
+
+#define TIME_MAX_DELAY 10
+#define BUFFER_SIZE 3
+#define Null_Int 0
+
+UART_HandleTypeDef huart2;
+static char mensaje_lectura_datos[]={"Indique la temperatura de test: \r\n"};
+enum  Flag_Program{
+	 lectura_set_temperatura,
+	 confirmación_set_temperatura
+};
+enum Flag_Program flag_program=lectura_set_temperatura;
+
+char interlineado[]={"\r\n"};
+uint8_t rx_buffer[BUFFER_SIZE];
+volatile uint8_t rx_data_ready = 0;
+ uint16_t UART_Date;
+
+
+
+// ******************************************
+void UART_Init(void){
+MX_USART2_UART_Init();
+HAL_UART_Receive_IT(&huart2, (uint8_t *)rx_buffer, BUFFER_SIZE);
+}
+/*
+ Función que inicializa la UART.
+*/
+//*******************************************
+
+
+
+
+/*
+ * Función Lectura datos no bloqueante (Uso de interrupción) de 3 bytes desde la UART2
+ */
+uint16_t UART_Read(){
+	if (rx_data_ready) {
+		rx_data_ready = 0;
+		HAL_UART_Receive_IT(&huart2, rx_buffer, BUFFER_SIZE);
+	    rx_data_ready = 0;
+	    return UART_Date;
+	    }
+return Null_Int;
+}
+
+
+uint16_t UART_Program(){
+
+	switch (flag_program){
+
+	case(lectura_set_temperatura):
+		HAL_UART_Transmit(&huart2,(uint8_t *)mensaje_lectura_datos, sizeof(mensaje_lectura_datos), TIME_MAX_DELAY);
+		flag_program=confirmación_set_temperatura;
+		break;
+	case (confirmación_set_temperatura):
+
+			break;
+	default:
+			flag_program=lectura_set_temperatura;
+	}
+
+
+return Null_Int;
+}
+
+
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+
+			UART_Date= atoi((char *)rx_buffer);
+		 	HAL_UART_Transmit(&huart2,(uint8_t *)rx_buffer,sizeof(rx_buffer), HAL_MAX_DELAY);
+			HAL_UART_Transmit(&huart2,(uint8_t *)interlineado, strlen(interlineado), HAL_MAX_DELAY);
+			rx_data_ready = 1;
+
+}
+
+
+
+void MX_USART2_UART_Init(void)
+{
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 115200;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}

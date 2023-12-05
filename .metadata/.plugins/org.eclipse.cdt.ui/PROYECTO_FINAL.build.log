@@ -1,0 +1,22 @@
+14:23:49 **** Incremental Build of configuration Debug for project PROYECTO_FINAL ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/API_Uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_Uart.d" -MT"Drivers/API/Src/API_Uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_Uart.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:105:12: warning: unused variable 'c' [-Wunused-variable]
+  105 | UARTRead_t c=UART_Mef();
+      |            ^
+arm-none-eabi-gcc -o "PROYECTO_FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\PROYECTO_FINAL\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PROYECTO_FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PROYECTO_FINAL.elf
+ 
+arm-none-eabi-size   PROYECTO_FINAL.elf 
+arm-none-eabi-objdump -h -S  PROYECTO_FINAL.elf  > "PROYECTO_FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  12468	    252	   1988	  14708	   3974	PROYECTO_FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: PROYECTO_FINAL.list
+ 
+
+14:23:51 Build Finished. 0 errors, 1 warnings. (took 1s.969ms)
+

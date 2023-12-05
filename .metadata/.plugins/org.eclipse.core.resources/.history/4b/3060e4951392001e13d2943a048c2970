@@ -1,0 +1,28 @@
+/*
+ * API_Uart.c
+ *
+ *  Created on: Dec 3, 2023
+ *      Author: Royer Sanabria
+ */
+#include "main.h"
+#include "API_UART.h"
+
+
+
+
+
+void UART_receiveTemperature(recipe_t*temperature){
+	UART_HandleTypeDef huart2;
+	static void MX_USART2_UART_Init(void);
+	MX_USART2_UART_Init();
+	 char p[]={"hola"};
+	HAL_UART_Transmit(&huart2,(uint8_t *)p, 4, HAL_MAX_DELAY);
+}
+//void UART_recipeTime(receipe_t*time);
+//void UART_sed(void);
+
+
+
+void UART_Init(void){
+	void UART_Init(void);
+}

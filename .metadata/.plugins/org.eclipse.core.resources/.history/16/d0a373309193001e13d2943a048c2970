@@ -1,0 +1,41 @@
+/*
+ * API_UART.h
+ *
+ *  Created on: Dec 3, 2023
+ *      Author: Royer Sanabria
+ */
+
+#ifndef API_INC_API_UART_H_
+#define API_INC_API_UART_H_
+#endif /* API_INC_API_UART_H_ */
+#include <stdint.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+#include "API_Delay.h"
+#include "API_debounce.h"
+#include "stm32f4xx_hal.h"
+
+
+typedef bool bool_t;
+enum  Flag_Program{
+	 read_set_temperature,
+	 read_confirmation_set_temperature,
+	 write_message_temperature,
+	 write_message_confirmation
+};
+
+
+typedef struct{
+	bool_t estado;
+	uint16_t dato;
+}UARTRead_t;
+
+
+void UART_Init(void);
+UARTRead_t UART_Read();
+UARTRead_t UART_Mef(void);
+void MX_USART2_UART_Init(void);
+void UART_Status_button(void);
+void UART_program_flag();
+

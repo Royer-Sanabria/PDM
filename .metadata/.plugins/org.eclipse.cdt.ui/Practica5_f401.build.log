@@ -1,0 +1,10 @@
+11:25:22 **** Build of configuration Debug for project Practica5_f401 ****
+make -j8 all 
+arm-none-eabi-size   Practica5_f401.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9160	     68	   1668	  10896	   2a90	Practica5_f401.elf
+Finished building: default.size.stdout
+ 
+
+11:25:23 Build Finished. 0 errors, 0 warnings. (took 551ms)
+

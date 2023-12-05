@@ -1,0 +1,23 @@
+/*
+ * API_UART.h
+ *
+ *  Created on: Dec 3, 2023
+ *      Author: Royer Sanabria
+ */
+
+#ifndef API_INC_API_UART_H_
+#define API_INC_API_UART_H_
+#endif /* API_INC_API_UART_H_ */
+
+typedef uint8_t tick_t;
+typedef bool bool_t;
+
+typedef struct{
+	tick_t temperature;
+	tick_t duration;
+}recipe_t;
+
+
+void UART_Init(void);
+void UART_recipeTemperature();
+void UART_recipeTime();

@@ -1,0 +1,50 @@
+/*
+ * API_Uart.c
+ *
+ *  Created on: Dec 3, 2023
+ *      Author: Royer Sanabria
+ */
+#include "main.h"
+#include "API_UART.h"
+#include <string.h>
+#define TIME_MAX_WAIT 5000
+
+	UART_HandleTypeDef huart2;
+	static void MX_USART2_UART_Init(void);
+
+static recipe_t recipe;
+void UART_Init(void){
+MX_USART2_UART_Init();
+}
+
+
+
+void UART_receiveTemperature(){
+	char recipeTemperatura[3];
+		 char mensaje_solicitud_temperatura[]={"Indique la temperatura de la receta \r\n"};
+		 HAL_UART_Transmit(&huart2,(uint8_t *)mensaje_solicitud_temperatura, strlen(mensaje_solicitud_temperatura), HAL_MAX_DELAY);
+		 HAL_UART_Receive(&huart2,(uint8_t *)recipeTemperatura,3, HAL_MAX_DELAY);
+		 HAL_UART_Transmit(&huart2,(uint8_t *)recipeTemperatura, strlen(recipeTemperatura), HAL_MAX_DELAY);
+HAL_Delay(5000);
+
+}
+//void UART_recipeTime(receipe_t*time);
+//void UART_sed(void);
+
+
+
+static void MX_USART2_UART_Init(void)
+{
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 115200;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
