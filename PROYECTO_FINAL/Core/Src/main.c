@@ -111,6 +111,7 @@ Datos.dato=0;
 UART_Status_button();
 Datos=UART_Mef();
 
+/*
 if(Datos.estado){
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, SET);
 	UARTTrasmit(Datos.dato,Temperatura,delayRead(&Delay_Simulacion_sensor));
@@ -119,6 +120,7 @@ else{
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, RESET);
 
 }
+*/
 
 
 
