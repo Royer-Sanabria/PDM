@@ -35,7 +35,7 @@ static enum Flag_Program flag_program=write_message_temperature;
 static Status_Program_Control status_program_control;
 
 
-static uint8_t rx_buffer[BUFFER_SIZE];
+static uint8_t rx_buffer[BUFFER_SIZE]; // Buffer que almacena los datos recibidos por la UART por interrupción
 static uint16_t UART_Date;
 volatile uint8_t rx_data_ready = 0;
 volatile bool_t program_ready;
@@ -200,7 +200,9 @@ void UARTTrasmit(uint16_t temp_set,uint16_t temp_sensor,bool_t Stat){
 	}
 	}
 
-
+/*
+ * Func
+ */
 void Emergency(){
 
 HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, SET);

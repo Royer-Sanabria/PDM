@@ -12,11 +12,18 @@ static debounceState_t status_mef;
 static delay_t Retardo;
 static bool real_status_button;
 
+/*
+ * función de inicio de debounceFSM
+ */
 void debounceFSM_init(void){
 	delayInit(&Retardo,delay_control);
 	status_mef=buttonUp;
 }
 
+/*
+ * Actualizacion de la MEF de estado del botón.
+ *
+ */
 void debounceFSM_update(){
 	switch (status_mef){
 		case buttonUp:
@@ -59,6 +66,9 @@ void debounceFSM_update(){
 	}
 }
 
+/*
+ * Funcion que devuelve un true en caso que haya se haya presionado el botón
+ */
 bool_t readKey(){
 	debounceFSM_update();
 	if(real_status_button){

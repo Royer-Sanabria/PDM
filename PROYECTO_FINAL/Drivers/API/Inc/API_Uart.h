@@ -59,7 +59,7 @@ typedef struct{
 
 void UART_Init(void); //Inicializa los parametros de la Uart;
 
-UARTRead_t UART_Read(); //Lectura de datos enviados por la Uart por interrupción
+UARTRead_t UART_Read(); //Lectura de datos enviados por la Uart.
 
 UARTRead_t UART_Mef(); //Inicializa parametros de la MEF de guardado de temperatura.
 
