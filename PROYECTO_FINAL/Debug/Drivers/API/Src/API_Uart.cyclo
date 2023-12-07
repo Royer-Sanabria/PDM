@@ -5,4 +5,4 @@
 ../Drivers/API/Src/API_Uart.c:162:6:UART_Status_button	2
 ../Drivers/API/Src/API_Uart.c:174:6:MX_USART2_UART_Init	2
 ../Drivers/API/Src/API_Uart.c:190:6:UARTTrasmit	3
-../Drivers/API/Src/API_Uart.c:204:6:Emergency	1
+../Drivers/API/Src/API_Uart.c:206:6:Emergency	1

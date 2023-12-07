@@ -2,7 +2,7 @@
  * API_UART.h
  *
  *  Created on: Dec 3, 2023
- *      Author: Royer Sanabria
+ *      Author: Royer Sanabria ARIZA
  */
 
 #ifndef API_INC_API_UART_H_
@@ -59,7 +59,7 @@ typedef struct{
 
 void UART_Init(void); //Inicializa los parametros de la Uart;
 
-UARTRead_t UART_Read(); // La función se encarga de leer los datos enviados a través de UART y devuelve true tan pronto como ha recibido la totalidad de los datos.
+UARTRead_t UART_Read(); //La función se encarga de leer los datos enviados a través de UART y devuelve true tan pronto como ha recibido la totalidad de los datos.
 
 UARTRead_t UART_Mef(); //Inicializa parametros de la MEF de guardado de temperatura.
 
