@@ -59,13 +59,13 @@ typedef struct{
 
 void UART_Init(void); //Inicializa los parametros de la Uart;
 
-UARTRead_t UART_Read(); //Lectura de datos enviados por la Uart.
+UARTRead_t UART_Read(); // La función se encarga de leer los datos enviados a través de UART y devuelve true tan pronto como ha recibido la totalidad de los datos.
 
 UARTRead_t UART_Mef(); //Inicializa parametros de la MEF de guardado de temperatura.
 
-void UART_Status_button(void); // Revivisa si hay una pulsación del boton asignado para el reseteo de dato.
+void UART_Status_button(void); // Revisa si hay una pulsación del boton asignado para el reseteo de dato.
 
 void UARTTrasmit(uint16_t temp_set,uint16_t temp_sensor,bool_t Stat); // Envia el valor sensado por la UART.
 
 void MX_USART2_UART_Init(void);
-void Emergency();
+void Emergency(); // Rutina de emergencia bloqueante. Enciende led de placa.

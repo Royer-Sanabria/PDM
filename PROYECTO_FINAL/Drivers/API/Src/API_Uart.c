@@ -71,7 +71,7 @@ UARTRead_t UartRead;
 	if (rx_data_ready) {
 		rx_data_ready = 0;
 	    UartRead.dato=UART_Date;
-	    UartRead.estado=1;
+	    UartRead.estado=true;
 		HAL_UART_Receive_IT(&huart2, rx_buffer, BUFFER_SIZE);
 		}
 	else{
