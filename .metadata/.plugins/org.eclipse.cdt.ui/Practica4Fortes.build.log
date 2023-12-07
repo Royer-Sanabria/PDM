@@ -1,0 +1,26 @@
+10:59:52 **** Incremental Build of configuration Debug for project Practica4Fortes ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PdM_workspace/Practica4Fortes/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PdM_workspace/Practica4Fortes/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:132:27: error: 'blinkFlag' undeclared (first use in this function); did you mean 'blinkyFlag'?
+  132 |                           blinkFlag = BLINKER;
+      |                           ^~~~~~~~~
+      |                           blinkyFlag
+../Core/Src/main.c:132:27: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'blinkLed':
+../Core/Src/main.c:349:23: error: 'delay03' undeclared (first use in this function); did you mean 'delay_t'?
+  349 |         if(delayRead(&delay03)==1){
+      |                       ^~~~~~~
+      |                       delay_t
+At top level:
+../Core/Src/main.c:280:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+  280 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:198:13: warning: 'MX_ETH_Init' defined but not used [-Wunused-function]
+  198 | static void MX_ETH_Init(void)
+      |             ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+10:59:53 Build Failed. 3 errors, 2 warnings. (took 426ms)
+

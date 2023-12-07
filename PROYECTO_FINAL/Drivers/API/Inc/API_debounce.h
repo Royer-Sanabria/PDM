@@ -16,6 +16,9 @@
 typedef uint32_t status_t;
 typedef uint32_t control_t;
 
+/*
+ * Estados de la MEF que determina si el botón fue presionado.
+ */
 typedef enum {
 buttonUp,
 buttonDown,
@@ -23,11 +26,9 @@ buttonRising,
 buttonFalling}debounceState_t;
 
 
-void buttonPressed();
-void buttonReleased();
-void debounceFSM_update();
-void debounceFSM_init();
-bool_t readKey();
+void debounceFSM_update(); // Función que contiene la MEF que determina sii el botón fue presionado.
+void debounceFSM_init(); // Función de inicialización
+bool_t readKey(); // función que indica que indica si el botón fue presionado. devuelve un true en caso que haya sido presionado.
 
 
 #endif /* API_INC_API_DEBOUNCE_H_ */

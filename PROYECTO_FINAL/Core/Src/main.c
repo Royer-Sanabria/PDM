@@ -71,8 +71,14 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
 delay_t myDelay;
+delay_t Delay_Simulacion_sensor;
 delayInit(&myDelay, 500);
+delayInit(&Delay_Simulacion_sensor,100);
 UART_Init();
+uint16_t Temperatura=0;
+UARTRead_t Datos;
+Datos.estado=false;
+Datos.dato=0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -101,8 +107,18 @@ UART_Init();
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
 UART_Status_button();
-UARTRead_t c=UART_Mef();
+Datos=UART_Mef();
+
+if(Datos.estado){
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, SET);
+	UARTTrasmit(Datos.dato,Temperatura,delayRead(&Delay_Simulacion_sensor));
+}
+else{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, RESET);
+
+}
 
 
 
@@ -159,12 +175,6 @@ void SystemClock_Config(void)
   * @param None
   * @retval None
   */
-
-  /* USER CODE BEGIN USART2_Init 2 */
-
-  /* USER CODE END USART2_Init 2 */
-
-
 
 /**
   * @brief GPIO Initialization Function

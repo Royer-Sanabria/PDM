@@ -1,6 +1,8 @@
-../Drivers/API/Src/API_Uart.c:41:6:UART_Init	8	static
-../Drivers/API/Src/API_Uart.c:60:12:UART_Read	16	static
-../Drivers/API/Src/API_Uart.c:76:12:UART_Mef	16	static
-../Drivers/API/Src/API_Uart.c:123:6:HAL_UART_RxCpltCallback	16	static
-../Drivers/API/Src/API_Uart.c:131:6:UART_Status_button	8	static
-../Drivers/API/Src/API_Uart.c:144:6:MX_USART2_UART_Init	8	static
+../Drivers/API/Src/API_Uart.c:55:6:UART_Init	8	static
+../Drivers/API/Src/API_Uart.c:69:12:UART_Read	16	static
+../Drivers/API/Src/API_Uart.c:98:12:UART_Mef	16	static
+../Drivers/API/Src/API_Uart.c:149:6:HAL_UART_RxCpltCallback	16	static
+../Drivers/API/Src/API_Uart.c:162:6:UART_Status_button	8	static
+../Drivers/API/Src/API_Uart.c:174:6:MX_USART2_UART_Init	8	static
+../Drivers/API/Src/API_Uart.c:190:6:UARTTrasmit	16	static
+../Drivers/API/Src/API_Uart.c:204:6:Emergency	8	static

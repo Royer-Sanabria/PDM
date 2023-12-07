@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SENSOR/Drivers/API_BME280&apos; to &apos;API&apos;" description="Rename resource &apos;API_BME280&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Drivers/API_BME280" name="API" stamp="1701823889424" updateReferences="true"/>
+</session>

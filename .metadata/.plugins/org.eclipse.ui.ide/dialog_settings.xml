@@ -18,7 +18,23 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TFinal"/>
+			<item value="C:\Users\USUARIO\Desktop\Royer\universidad\PLPL\PdM_Working\Trabajo_Final"/>
+			<item value="C:\Users\USUARIO\Desktop\Royer\universidad\pkpk\PdM_Working\Trabajo_Final"/>
+			<item value="C:\Users\USUARIO\Desktop\Royer\universidad\popo\PdM_workspace\Practica2_f103"/>
+			<item value="C:\Users\USUARIO\Desktop\Royer\universidad\popo\tpGIT_cjs\PdM_Practica_3"/>
+			<item value="C:\Users\USUARIO\Desktop\Royer\universidad\popo\Prog-us_workspace\Clase5"/>
+			<item value="C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\Prog-us_workspace"/>
+			<item value="C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\PdM_workspace"/>
 			<item value="C:\Users\USUARIO\Desktop\Estudio\PDM\CLONADOS"/>
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="375"/>
+		<item key="DIALOG_Y_ORIGIN" value="181"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
 		</list>
 	</section>
 </section>

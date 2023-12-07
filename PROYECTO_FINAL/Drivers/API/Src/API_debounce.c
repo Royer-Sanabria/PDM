@@ -6,8 +6,9 @@
  */
 
 #include "API_debounce.h"
+
 static uint32_t delay_control=40;
-debounceState_t status_mef;
+static debounceState_t status_mef;
 static delay_t Retardo;
 static bool real_status_button;
 
@@ -17,9 +18,9 @@ void debounceFSM_init(void){
 }
 
 void debounceFSM_update(){
-
 	switch (status_mef){
 		case buttonUp:
+
 			if(RESET==HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)){
 				status_mef=buttonFalling;
 			}
@@ -28,7 +29,6 @@ void debounceFSM_update(){
 			if(delayRead(&Retardo)){
 				if(SET==HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)){
 					status_mef=buttonUp;
-					//buttonPressed();
 					real_status_button=true;
 				}
 				else {
@@ -47,7 +47,6 @@ void debounceFSM_update(){
 			if(delayRead(&Retardo)){
 			if(RESET==HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)){
 				status_mef=buttonUp;
-				//buttonReleased();
 				real_status_button=true;
 			}
 			else {
@@ -71,10 +70,3 @@ bool_t readKey(){
 	}
 }
 
-
-void buttonPressed(){
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, SET);
-}
-void buttonReleased(){
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, RESET);
-}

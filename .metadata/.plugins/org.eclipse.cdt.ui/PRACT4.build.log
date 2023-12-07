@@ -1,4 +1,4 @@
-01:50:58 **** Incremental Build of configuration Debug for project PRACT4 ****
+19:44:40 **** Build of configuration Debug for project PRACT4 ****
 make -j8 all 
 arm-none-eabi-size   PRACT4.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   PRACT4.elf
 Finished building: default.size.stdout
  
 
-01:50:59 Build Finished. 0 errors, 0 warnings. (took 252ms)
+19:44:40 Build Finished. 0 errors, 0 warnings. (took 470ms)
 

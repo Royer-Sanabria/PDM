@@ -1,0 +1,9 @@
+11:29:40 **** Incremental Build of configuration Debug for project Clase2 ****
+make -j8 all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[/opt/st/stm32cubeide_1.13.2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.1.202309131626/tools/bin:/opt/st/stm32cubeide_1.13.2/plugins/com.st.stm32cube.ide.mcu.externaltools.make.linux64_2.1.0.202305091550/tools/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/home/gigi/Facu/CESE/Programacion de micros/Prog-us_workspace/Clase2/Core/Src/]
+
+11:29:41 Build Failed. 1 errors, 0 warnings. (took 58ms)
+

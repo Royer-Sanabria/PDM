@@ -1,5 +1,5 @@
 Drivers/API/Src/API_debounce.o: ../Drivers/API/Src/API_debounce.c \
- C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Inc/API_debounce.h \
+ C:/Users/USUARIO/Desktop/PDM/PDM/PROYECTO_FINAL/Drivers/API/Inc/API_debounce.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -26,8 +26,8 @@ Drivers/API/Src/API_debounce.o: ../Drivers/API/Src/API_debounce.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Inc/API_delay.h
-C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Inc/API_debounce.h:
+ C:/Users/USUARIO/Desktop/PDM/PDM/PROYECTO_FINAL/Drivers/API/Inc/API_delay.h
+C:/Users/USUARIO/Desktop/PDM/PDM/PROYECTO_FINAL/Drivers/API/Inc/API_debounce.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
@@ -54,4 +54,4 @@ C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Inc/A
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Inc/API_delay.h:
+C:/Users/USUARIO/Desktop/PDM/PDM/PROYECTO_FINAL/Drivers/API/Inc/API_delay.h:

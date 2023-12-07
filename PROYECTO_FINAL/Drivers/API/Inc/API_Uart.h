@@ -15,27 +15,57 @@
 #include "API_Delay.h"
 #include "API_debounce.h"
 #include "stm32f4xx_hal.h"
+#include <BMP280.h>
 
 
 typedef bool bool_t;
+typedef uint16_t tick_m;
+
+/*Flag_Program:
+ *  - Estados que puede tomar la MEF de la función UART_Mef(); *
+ */
 enum  Flag_Program{
 	 read_set_temperature,
 	 read_confirmation_set_temperature,
 	 write_message_temperature,
 	 write_message_confirmation
 };
+enum status_program_control{
+	High_Alert,
+	Ideal_Condition
+};
 
 
+typedef struct {
+bool_t Status_Temperature;
+uint16_t Temperature;
+}Temperature_read;
+
+typedef struct {
+	enum status_program_control;
+	uint16_t Temperature;
+}Status_Program_Control;
+
+/*UARTRead
+ *  - Estructura de datos para guardar la información transmitida por la UART,
+ *    se acompaña de un bool para tener el control de la lectura de datos por
+ *    interrupcion.
+ */
 typedef struct{
-	bool_t estado;
+	bool estado;
 	uint16_t dato;
 }UARTRead_t;
 
 
-void UART_Init(void);
-UARTRead_t UART_Read();
-UARTRead_t UART_Mef();
-void MX_USART2_UART_Init(void);
-void UART_Status_button();
-void UART_program_flag();
+void UART_Init(void); //Inicializa los parametros de la Uart;
 
+UARTRead_t UART_Read(); //Lectura de datos enviados por la Uart por interrupción
+
+UARTRead_t UART_Mef(); //Inicializa parametros de la MEF de guardado de temperatura.
+
+void UART_Status_button(void); // Revivisa si hay una pulsación del boton asignado para el reseteo de dato.
+
+void UARTTrasmit(uint16_t temp_set,uint16_t temp_sensor,bool_t Stat); // Envia el valor sensado por la UART.
+
+void MX_USART2_UART_Init(void);
+void Emergency();
