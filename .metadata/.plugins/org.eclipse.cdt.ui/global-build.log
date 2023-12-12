@@ -1,193 +1,146 @@
-19:38:05 **** Incremental Build of configuration Debug for project PROYECTO_FINAL ****
+15:04:22 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
 make -j8 all 
-arm-none-eabi-size   PROYECTO_FINAL.elf 
+arm-none-eabi-gcc "../Drivers/API/Src/BMP280_Funtion.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/BMP280_Funtion.d" -MT"Drivers/API/Src/BMP280_Funtion.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/BMP280_Funtion.o"
+arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+ 
+arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
+arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
    text	   data	    bss	    dec	    hex	filename
-     88	      8	   1568	   1664	    680	PROYECTO_FINAL.elf
+  25256	    476	   2060	  27792	   6c90	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
 Finished building: default.size.stdout
  
-19:38:20 **** Incremental Build of configuration Debug for project PROYECTO_FINAL ****
+Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
+ 
+15:04:38 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
 make -j8 all 
-arm-none-eabi-size   PROYECTO_FINAL.elf 
+arm-none-eabi-gcc "../Drivers/API/Src/BMP280_Funtion.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/BMP280_Funtion.d" -MT"Drivers/API/Src/BMP280_Funtion.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/BMP280_Funtion.o"
+arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+ 
+arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
+arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
    text	   data	    bss	    dec	    hex	filename
-     88	      8	   1568	   1664	    680	PROYECTO_FINAL.elf
+  25256	    476	   2060	  27792	   6c90	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
 Finished building: default.size.stdout
  
-19:39:22 **** Incremental Build of configuration Debug for project PROYECTO_FINAL ****
-make -j8 all 
-arm-none-eabi-size   PROYECTO_FINAL.elf 
-   text	   data	    bss	    dec	    hex	filename
-     88	      8	   1568	   1664	    680	PROYECTO_FINAL.elf
-Finished building: default.size.stdout
+Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
  
-19:39:55 **** Incremental Build of configuration Debug for project PROYECTO_FINAL ****
+15:05:30 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
 make -j8 all 
-arm-none-eabi-size   PROYECTO_FINAL.elf 
-   text	   data	    bss	    dec	    hex	filename
-     88	      8	   1568	   1664	    680	PROYECTO_FINAL.elf
-Finished building: default.size.stdout
- 
-19:41:07 **** Incremental Build of configuration Debug for project PROYECTO_FINAL ****
-make -j8 all 
-arm-none-eabi-size   PROYECTO_FINAL.elf 
-   text	   data	    bss	    dec	    hex	filename
-     88	      8	   1568	   1664	    680	PROYECTO_FINAL.elf
-Finished building: default.size.stdout
- 
-19:43:36 **** Incremental Build of configuration Debug for project PROYECTO_FINAL ****
-make -j8 all 
-arm-none-eabi-size   PROYECTO_FINAL.elf 
-   text	   data	    bss	    dec	    hex	filename
-     88	      8	   1568	   1664	    680	PROYECTO_FINAL.elf
-Finished building: default.size.stdout
- 
-19:44:40 **** Build of configuration Debug for project PRACT4 ****
-make -j8 all 
-arm-none-eabi-size   PRACT4.elf 
-   text	   data	    bss	    dec	    hex	filename
-   6344	     32	   1616	   7992	   1f38	PRACT4.elf
-Finished building: default.size.stdout
- 
-19:44:58 **** Incremental Build of configuration Debug for project PROYECTO_FINAL ****
-make -j8 all 
-arm-none-eabi-size   PROYECTO_FINAL.elf 
-   text	   data	    bss	    dec	    hex	filename
-     88	      8	   1568	   1664	    680	PROYECTO_FINAL.elf
-Finished building: default.size.stdout
- 
-19:47:33 **** Incremental Build of configuration Debug for project PROYECTO_FINAL ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c:55:13: error: static declaration of 'MX_USART2_UART_Init' follows non-static declaration
-   55 | static void MX_USART2_UART_Init(void);
-      |             ^~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/main.c:25:
-C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Inc/API_UART.h:37:6: note: previous declaration of 'MX_USART2_UART_Init' with type 'void(void)'
-   37 | void MX_USART2_UART_Init(void);
-      |      ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:107:12: warning: unused variable 'c' [-Wunused-variable]
-  107 | UARTRead_t c=UART_Mef();
-      |            ^
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-19:48:11 **** Incremental Build of configuration Debug for project PROYECTO_FINAL ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:107:12: warning: unused variable 'c' [-Wunused-variable]
-  107 | UARTRead_t c=UART_Mef();
-      |            ^
-arm-none-eabi-gcc -o "PROYECTO_FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\PROYECTO_FINAL\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PROYECTO_FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/ST/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Drivers/API/Src/API_Uart.o:C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Debug/../Drivers/API/Src/API_Uart.c:15: multiple definition of `huart2'; ./Core/Src/main.o:C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Debug/../Core/Src/main.c:46: first defined here
-C:/ST/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler; defaulting to 0000000008000000
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:64: PROYECTO_FINAL.elf] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-19:48:39 **** Incremental Build of configuration Debug for project PROYECTO_FINAL ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:107:12: warning: unused variable 'c' [-Wunused-variable]
-  107 | UARTRead_t c=UART_Mef();
-      |            ^
-arm-none-eabi-gcc -o "PROYECTO_FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\PROYECTO_FINAL\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PROYECTO_FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/ST/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler; defaulting to 0000000008000000
-Finished building target: PROYECTO_FINAL.elf
+../Core/Src/main.c:109:3: warning: implicit declaration of function 'BMP_280_Init2'; did you mean 'BMP_280_Init'? [-Wimplicit-function-declaration]
+  109 |   BMP_280_Init2(hi2c1, huart2);
+      |   ^~~~~~~~~~~~~
+      |   BMP_280_Init
+../Core/Src/main.c:138:1: warning: implicit declaration of function 'BMP_280_Read'; did you mean 'BMP_280_Init'? [-Wimplicit-function-declaration]
+  138 | BMP_280_Read(hi2c1, huart2);
+      | ^~~~~~~~~~~~
+      | BMP_280_Init
+arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
  
-arm-none-eabi-size   PROYECTO_FINAL.elf 
-arm-none-eabi-objdump -h -S  PROYECTO_FINAL.elf  > "PROYECTO_FINAL.list"
+arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
+arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
    text	   data	    bss	    dec	    hex	filename
-     88	      8	   1568	   1664	    680	PROYECTO_FINAL.elf
+  33828	    476	   2380	  36684	   8f4c	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
 Finished building: default.size.stdout
  
-Finished building: PROYECTO_FINAL.list
+Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
  
-20:04:47 **** Build of configuration Debug for project TrabajoF ****
+15:12:51 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
 make -j8 all 
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.o"
-arm-none-eabi-gcc "../Drivers/API/Src/API_Delay.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_Delay.d" -MT"Drivers/API/Src/API_Delay.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_Delay.o"
-arm-none-eabi-gcc "../Drivers/API/Src/API_Uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_Uart.d" -MT"Drivers/API/Src/API_Uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_Uart.o"
-arm-none-eabi-gcc "../Drivers/API/Src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_debounce.d" -MT"Drivers/API/Src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_debounce.o"
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f401retx.d" -MT"Core/Startup/startup_stm32f401retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f401retx.o" "../Core/Startup/startup_stm32f401retx.s"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
-../Drivers/API/Src/API_debounce.c: In function 'debounceFSM_update':
-../Drivers/API/Src/API_debounce.c:23:33: warning: comparison between 'enum <anonymous>' and 'GPIO_PinState' [-Wenum-compare]
-   23 |                         if(RESET==HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)){
-      |                                 ^~
-../Drivers/API/Src/API_debounce.c:29:39: warning: comparison between 'enum <anonymous>' and 'GPIO_PinState' [-Wenum-compare]
-   29 |                                 if(SET==HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)){
-      |                                       ^~
-../Drivers/API/Src/API_debounce.c:41:32: warning: comparison between 'enum <anonymous>' and 'GPIO_PinState' [-Wenum-compare]
-   41 |                         if (SET==HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)){
-      |                                ^~
-../Drivers/API/Src/API_debounce.c:48:33: warning: comparison between 'enum <anonymous>' and 'GPIO_PinState' [-Wenum-compare]
-   48 |                         if(RESET==HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)){
-      |                                 ^~
-arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
-arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
-arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
-arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
-arm-none-eabi-gcc -o "TrabajoF.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TrabajoF\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabajoF.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/ST/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Drivers/API/Src/API_Uart.o:C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Debug/../Drivers/API/Src/API_Uart.c:15: multiple definition of `huart2'; ./Core/Src/main.o:C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Debug/../Core/Src/main.c:45: first defined here
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:65: TrabajoF.elf] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-20:08:29 **** Incremental Build of configuration Debug for project TrabajoF ****
-make -j8 all 
-arm-none-eabi-gcc -o "TrabajoF.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TrabajoF\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabajoF.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/ST/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Drivers/API/Src/API_Uart.o:C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Debug/../Drivers/API/Src/API_Uart.c:15: multiple definition of `huart2'; ./Core/Src/main.o:C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Debug/../Core/Src/main.c:45: first defined here
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:65: TrabajoF.elf] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-20:09:04 **** Incremental Build of configuration Debug for project TrabajoF ****
-make -j8 all 
-arm-none-eabi-gcc -o "TrabajoF.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TrabajoF\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabajoF.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/ST/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Drivers/API/Src/API_Uart.o:C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Debug/../Drivers/API/Src/API_Uart.c:15: multiple definition of `huart2'; ./Core/Src/main.o:C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Debug/../Core/Src/main.c:45: first defined here
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:65: TrabajoF.elf] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-20:09:16 **** Incremental Build of configuration Debug for project TrabajoF ****
-make -j8 all 
-arm-none-eabi-gcc -o "TrabajoF.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TrabajoF\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabajoF.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/ST/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Drivers/API/Src/API_Uart.o:C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Debug/../Drivers/API/Src/API_Uart.c:15: multiple definition of `huart2'; ./Core/Src/main.o:C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Debug/../Core/Src/main.c:45: first defined here
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:65: TrabajoF.elf] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-20:10:30 **** Incremental Build of configuration Debug for project TrabajoF ****
-make -j8 all 
-arm-none-eabi-gcc -o "TrabajoF.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TrabajoF\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabajoF.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/ST/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Drivers/API/Src/API_Uart.o:C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Debug/../Drivers/API/Src/API_Uart.c:15: multiple definition of `huart2'; ./Core/Src/main.o:C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Debug/../Core/Src/main.c:45: first defined here
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:65: TrabajoF.elf] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-20:10:48 **** Incremental Build of configuration Debug for project PROYECTO_FINAL ****
-make -j8 all 
-arm-none-eabi-size   PROYECTO_FINAL.elf 
+arm-none-eabi-gcc "../Drivers/API/Src/BMP280_Funtion.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/BMP280_Funtion.d" -MT"Drivers/API/Src/BMP280_Funtion.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/BMP280_Funtion.o"
+../Drivers/API/Src/BMP280_Funtion.c: In function 'BMP_280_Init2':
+../Drivers/API/Src/BMP280_Funtion.c:35:74: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+   35 |                                 HAL_UART_Transmit(&huart2, Data, strlen (Data), Delay_MAX_Trasmit);
+      |                                                                          ^~~~
+      |                                                                          |
+      |                                                                          uint8_t * {aka unsigned char *}
+In file included from C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/bmp280.h:17,
+                 from ../Drivers/API/Src/BMP280_Funtion.c:8:
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+ 
+arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
+arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
    text	   data	    bss	    dec	    hex	filename
-     88	      8	   1568	   1664	    680	PROYECTO_FINAL.elf
+  34004	    476	   2380	  36860	   8ffc	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
 Finished building: default.size.stdout
  
-20:11:42 **** Incremental Build of configuration Debug for project TrabajoF ****
+Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
+ 
+15:14:05 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
 make -j8 all 
-arm-none-eabi-gcc -o "TrabajoF.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TrabajoF\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabajoF.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/ST/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Drivers/API/Src/API_Uart.o:C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Debug/../Drivers/API/Src/API_Uart.c:15: multiple definition of `huart2'; ./Core/Src/main.o:C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TrabajoF/Debug/../Core/Src/main.c:45: first defined here
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:65: TrabajoF.elf] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
+arm-none-eabi-gcc "../Drivers/API/Src/BMP280_Funtion.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/BMP280_Funtion.d" -MT"Drivers/API/Src/BMP280_Funtion.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/BMP280_Funtion.o"
+../Drivers/API/Src/BMP280_Funtion.c: In function 'BMP_280_Init2':
+../Drivers/API/Src/BMP280_Funtion.c:31:74: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+   31 |                                 HAL_UART_Transmit(&huart2, Data, strlen (Data), Delay_MAX_Trasmit);
+      |                                                                          ^~~~
+      |                                                                          |
+      |                                                                          uint8_t * {aka unsigned char *}
+In file included from C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/bmp280.h:17,
+                 from ../Drivers/API/Src/BMP280_Funtion.c:8:
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Drivers/API/Src/BMP280_Funtion.c:35:74: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+   35 |                                 HAL_UART_Transmit(&huart2, Data, strlen (Data), Delay_MAX_Trasmit);
+      |                                                                          ^~~~
+      |                                                                          |
+      |                                                                          uint8_t * {aka unsigned char *}
+In file included from C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/bmp280.h:17,
+                 from ../Drivers/API/Src/BMP280_Funtion.c:8:
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+ 
+arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
+arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
+   text	   data	    bss	    dec	    hex	filename
+  33996	    476	   2380	  36852	   8ff4	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+Finished building: default.size.stdout
+ 
+Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
+ 
+15:15:57 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/BMP280_Funtion.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/BMP280_Funtion.d" -MT"Drivers/API/Src/BMP280_Funtion.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/BMP280_Funtion.o"
+../Drivers/API/Src/BMP280_Funtion.c: In function 'BMP_280_Init2':
+../Drivers/API/Src/BMP280_Funtion.c:31:74: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+   31 |                                 HAL_UART_Transmit(&huart2, Data, strlen (Data), Delay_MAX_Trasmit);
+      |                                                                          ^~~~
+      |                                                                          |
+      |                                                                          uint8_t * {aka unsigned char *}
+In file included from C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/bmp280.h:17,
+                 from ../Drivers/API/Src/BMP280_Funtion.c:8:
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Drivers/API/Src/BMP280_Funtion.c:35:74: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+   35 |                                 HAL_UART_Transmit(&huart2, Data, strlen (Data), Delay_MAX_Trasmit);
+      |                                                                          ^~~~
+      |                                                                          |
+      |                                                                          uint8_t * {aka unsigned char *}
+In file included from C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/bmp280.h:17,
+                 from ../Drivers/API/Src/BMP280_Funtion.c:8:
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+ 
+arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
+arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
+   text	   data	    bss	    dec	    hex	filename
+  33988	    476	   2380	  36844	   8fec	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+Finished building: default.size.stdout
+ 
+Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
+ 

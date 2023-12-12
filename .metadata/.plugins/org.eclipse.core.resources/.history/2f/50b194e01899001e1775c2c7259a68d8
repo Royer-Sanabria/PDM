@@ -1,0 +1,40 @@
+/*
+ * BMP280_Funtion.c
+ *
+ *  Created on: Dec 12, 2023
+ *      Author: Royer Sanabria
+ */
+
+#include "bmp280.h"
+#include "BMP280_Funtion.h"
+#include "main.h"
+#include <stdint.h>
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+
+static BMP280_HandleTypedef bmp280;
+static float pressure, temperature, humidity;
+static uint16_t size;
+static uint8_t Data[256];
+
+void BMP_280_Init2(){
+	 //bmp280_init_default_params(&bmp280.params);
+		//bmp280.addr = BMP280_I2C_ADDRESS_0;
+		//bmp280.i2c = &hi2c1;
+		//bmp280_init(&bmp280, &bmp280.params);
+}
+
+void BMP_280_Read(I2C_HandleTypeDef hi2c1, UART_HandleTypeDef huart2){
+
+	HAL_Delay(1000);
+
+	  	  while (!bmp280_read_float(&bmp280, &temperature, &pressure, &humidity)) {
+	  	  			size = sprintf((char *)Data,"Temperature/pressure reading failed\r\n");
+	  	  			HAL_UART_Transmit(&huart2, Data, size, 1000);
+	  	  		}
+
+		  	  		size = sprintf((char *)Data,"Pressure: %.2f Pa, Temperature: %.2f \r\n",pressure, temperature);
+		  	  		HAL_UART_Transmit(&huart2, Data, size, 1000);
+}

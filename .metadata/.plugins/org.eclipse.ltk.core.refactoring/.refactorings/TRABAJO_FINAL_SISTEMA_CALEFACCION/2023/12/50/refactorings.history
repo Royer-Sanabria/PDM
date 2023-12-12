@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/BMP280_Funtion&apos; to &apos;BMP280_Funtion.h&apos;" description="Rename resource &apos;BMP280_Funtion&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Drivers/API/Inc/BMP280_Funtion" name="BMP280_Funtion.h" stamp="1702402998133" updateReferences="true"/>
+</session>

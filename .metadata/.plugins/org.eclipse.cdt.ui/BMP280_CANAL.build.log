@@ -1,0 +1,10 @@
+20:01:21 **** Incremental Build of configuration Debug for project BMP280_CANAL ****
+make -j8 all 
+arm-none-eabi-size   BMP280_CANAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15328	    468	   1908	  17704	   4528	BMP280_CANAL.elf
+Finished building: default.size.stdout
+ 
+
+20:01:21 Build Finished. 0 errors, 0 warnings. (took 251ms)
+
