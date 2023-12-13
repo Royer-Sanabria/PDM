@@ -23,7 +23,9 @@
 /* USER CODE BEGIN Includes */
 #include "bmp280.h"
 #include "BMP280_Funtion.h"
+#include <API_delay.h>
 #include "API_UART.h"
+
 #include <stdint.h>
 #include <stdio.h>
 #include <stdbool.h>
@@ -48,10 +50,12 @@
 
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c1;
-UART_HandleTypeDef huart2;
+
+//UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 
+extern UART_HandleTypeDef huart2;
 
 /* USER CODE END PV */
 
@@ -67,6 +71,8 @@ static void MX_USART2_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 static ReadSensor BUFFER_DATO;
+delay_t DelayPrint;
+UARTRead_t ReadUART;
 /* USER CODE END 0 */
 
 /**
@@ -101,24 +107,41 @@ int main(void)
   MX_I2C1_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  BMP_280_Init2(hi2c1);
-
+   BMP_280_Init2(hi2c1);
+  UART_Init2();
+ delayInit(&DelayPrint, 500);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+
+
   while (1)
   {
+	  ReadUART=UART_Read();
 
-BUFFER_DATO=BMP_280_ConfigP0(hi2c1);
-UART_TrasmitSensor(&huart2, BUFFER_DATO);
-	  		HAL_Delay(2000);
+	  if(ReadUART.dato>25){
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, RESET);
+	  }
+	  else {
+	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, SET);}
+//BUFFER_DATO=BMP_280_ConfigP0(hi2c1);
+//if(delayRead(&DelayPrint))UART_TrasmitSensor(BUFFER_DATO);
 
 
+
+//HAL_UART_Transmit(&huart2,(uint8_t *)ReadUART.dato, strlen (ReadUART.dato), HAL_MAX_DELAY);
+
+
+
+/*
 	  while (1){
-		//  BUFFER_DATO=BMP_280_Read(hi2c1);
-	//	  UART_TrasmitSensor(&huart2, BUFFER_DATO);
-		  	  	//	HAL_Delay(2000);
+
+	BUFFER_DATO=BMP_280_Read(hi2c1);
+	 if(delayRead(&DelayPrint))
+		 UART_TrasmitSensor(&huart2, BUFFER_DATO);
+*/
 
 		  /*
 
@@ -128,7 +151,6 @@ UART_TrasmitSensor(&huart2, BUFFER_DATO);
 
 		  	  		HAL_Delay(1000);
 		  	  		*/
-	  }
 
 
     /* USER CODE END WHILE */
@@ -268,11 +290,21 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+
   /*Configure GPIO pin : PC13 */
   GPIO_InitStruct.Pin = GPIO_PIN_13;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PA5 */
+  GPIO_InitStruct.Pin = GPIO_PIN_5;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */

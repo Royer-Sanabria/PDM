@@ -9,12 +9,15 @@
 #define API_INC_API_UART_H_
 
 typedef struct{
-	bool estado;
-	uint16_t dato;
+	bool_t estado;
+	uint8_t dato;
 }UARTRead_t;
-extern UART_HandleTypeDef huart2;
 
-void UART_TrasmitSensor(UART_HandleTypeDef *huart,ReadSensor Dato);
-//UARTRead_t UART_Read(UART_HandleTypeDef*huart);
+
+
+
+void UART_TrasmitSensor(ReadSensor Dato);
+void UART_Init2 ();
+UARTRead_t UART_Read();
 
 #endif /* API_INC_API_UART_H_ */

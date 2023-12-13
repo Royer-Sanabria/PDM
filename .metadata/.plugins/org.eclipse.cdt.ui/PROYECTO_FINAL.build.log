@@ -1,10 +1,47 @@
-09:15:41 **** Incremental Build of configuration Debug for project PROYECTO_FINAL ****
+13:01:47 **** Incremental Build of configuration Debug for project PROYECTO_FINAL ****
 make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/API_Uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_Uart.d" -MT"Drivers/API/Src/API_Uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_Uart.o"
+In file included from ../Drivers/API/Src/API_Uart.c:8:
+C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PROYECTO_FINAL/Drivers/API/Inc/API_UART.h:45:36: warning: declaration does not declare anything
+   45 |         enum status_program_control;
+      |                                    ^
+../Drivers/API/Src/API_Uart.c: In function 'UARTTrasmit':
+../Drivers/API/Src/API_Uart.c:195:35: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  195 |         HAL_UART_Transmit(&huart2,(char *)temp_sensor, sizeof(temp_sensor), HAL_MAX_DELAY);
+      |                                   ^
+../Drivers/API/Src/API_Uart.c:195:35: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  195 |         HAL_UART_Transmit(&huart2,(char *)temp_sensor, sizeof(temp_sensor), HAL_MAX_DELAY);
+      |                                   ^~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Drivers/API/Src/API_Uart.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+At top level:
+../Drivers/API/Src/API_Uart.c:44:16: warning: 'Delay_sendDateBMP280' defined but not used [-Wunused-variable]
+   44 | static delay_t Delay_sendDateBMP280;
+      |                ^~~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/API_Uart.c:35:31: warning: 'status_program_control' defined but not used [-Wunused-variable]
+   35 | static Status_Program_Control status_program_control;
+      |                               ^~~~~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/API_Uart.c:31:13: warning: 'Lectura_Sensor' defined but not used [-Wunused-variable]
+   31 | static char Lectura_Sensor[]={"Temperatura actual  \r\n"};
+      |             ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "PROYECTO_FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\PROYECTO_FINAL\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PROYECTO_FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PROYECTO_FINAL.elf
+ 
 arm-none-eabi-size   PROYECTO_FINAL.elf 
+arm-none-eabi-objdump -h -S  PROYECTO_FINAL.elf  > "PROYECTO_FINAL.list"
    text	   data	    bss	    dec	    hex	filename
   12496	    252	   1988	  14736	   3990	PROYECTO_FINAL.elf
 Finished building: default.size.stdout
  
+Finished building: PROYECTO_FINAL.list
+ 
 
-09:15:41 Build Finished. 0 errors, 0 warnings. (took 422ms)
+13:01:48 Build Finished. 0 errors, 6 warnings. (took 917ms)
 
