@@ -1,0 +1,20 @@
+/*
+ * API_UART.h
+ *
+ *  Created on: Dec 12, 2023
+ *      Author: Royer Sanabria
+ */
+
+#ifndef API_INC_API_UART_H_
+#define API_INC_API_UART_H_
+
+typedef struct{
+	bool estado;
+	uint16_t dato;
+}UARTRead;
+
+void UART_TrasmitSensor(UART_HandleTypeDef huart2, ReadSensor Dato);
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef*huart);
+UARTRead UART_Read(UART_HandleTypeDef*huart);
+
+#endif /* API_INC_API_UART_H_ */

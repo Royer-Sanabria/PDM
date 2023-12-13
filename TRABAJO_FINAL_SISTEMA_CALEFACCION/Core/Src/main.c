@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include "bmp280.h"
 #include "BMP280_Funtion.h"
+#include "API_UART.h"
 #include <stdint.h>
 #include <stdio.h>
 #include <stdbool.h>
@@ -50,7 +51,7 @@ I2C_HandleTypeDef hi2c1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-uint8_t Data[256];
+
 
 /* USER CODE END PV */
 
@@ -65,7 +66,7 @@ static void MX_USART2_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+static ReadSensor BUFFER_DATO;
 /* USER CODE END 0 */
 
 /**
@@ -108,18 +109,25 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  ReadSensor B;
-B=BMP_280_ConfigP0(hi2c1);
-sprintf((char *)Data,"Pressure: %.2f Pa, Temperature: %.2f, Altitud To: %.2f \r\n",B.Presion, B.Temperatura, B.altura);
-	  		HAL_UART_Transmit(&huart2, Data, strlen (Data), 1000);
-	  		HAL_Delay(5000);
+
+BUFFER_DATO=BMP_280_ConfigP0(hi2c1);
+UART_TrasmitSensor(&huart2, BUFFER_DATO);
+	  		HAL_Delay(2000);
+
 
 	  while (1){
-		  ReadSensor A;
-		  A=BMP_280_Read(hi2c1);
-		  sprintf((char *)Data,"Pressure: %.2f Pa, Temperature: %.2f, Altitud (m): %.2f \r\n",A.Presion, A.Temperatura, A.altura);
-		  	  		HAL_UART_Transmit(&huart2, Data, strlen (Data), 1000);
+		//  BUFFER_DATO=BMP_280_Read(hi2c1);
+	//	  UART_TrasmitSensor(&huart2, BUFFER_DATO);
+		  	  	//	HAL_Delay(2000);
+
+		  /*
+
+		  UARTRead_t A = UART_Read(&huart2);
+		  BUFFER_DATO=BMP_280_Read(hi2c1);
+		  UART_TrasmitSensor(huart2, BUFFER_DATO);
+
 		  	  		HAL_Delay(1000);
+		  	  		*/
 	  }
 
 

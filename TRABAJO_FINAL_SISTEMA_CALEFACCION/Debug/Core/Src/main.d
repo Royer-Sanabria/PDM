@@ -28,7 +28,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/bmp280.h \
- C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/BMP280_Funtion.h
+ C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/BMP280_Funtion.h \
+ C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/API_UART.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -60,3 +61,4 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/bmp280.h:
 C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/BMP280_Funtion.h:
+C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/API_UART.h:

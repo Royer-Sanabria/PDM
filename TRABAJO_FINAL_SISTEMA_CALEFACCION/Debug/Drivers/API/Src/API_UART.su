@@ -1,0 +1,2 @@
+../Drivers/API/Src/API_UART.c:25:6:UART_TrasmitSensor	64	static
+../Drivers/API/Src/API_UART.c:50:6:HAL_UART_RxCpltCallback	16	static

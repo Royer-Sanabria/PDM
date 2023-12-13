@@ -8,7 +8,7 @@
 #ifndef API_INC_BMP280_FUNTION_H_
 #define API_INC_BMP280_FUNTION_H_
 
-typedef struct ReadSensor {
+typedef struct  {
     float Temperatura;
     float Presion;
     float altura;

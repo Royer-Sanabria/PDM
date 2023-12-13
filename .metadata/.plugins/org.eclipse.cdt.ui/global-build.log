@@ -1,58 +1,163 @@
-22:04:26 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+08:35:59 **** Build of configuration Debug for project PROYECTO_FINAL ****
 make -j8 all 
-arm-none-eabi-gcc "../Drivers/API/Src/BMP280_Funtion.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/BMP280_Funtion.d" -MT"Drivers/API/Src/BMP280_Funtion.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/BMP280_Funtion.o"
+arm-none-eabi-size   PROYECTO_FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12496	    252	   1988	  14736	   3990	PROYECTO_FINAL.elf
+Finished building: default.size.stdout
+ 
+08:37:46 **** Incremental Build of configuration Debug for project PROYECTO_FINAL ****
+make -j8 all 
+arm-none-eabi-size   PROYECTO_FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12496	    252	   1988	  14736	   3990	PROYECTO_FINAL.elf
+Finished building: default.size.stdout
+ 
+08:38:36 **** Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/API_UART.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_UART.d" -MT"Drivers/API/Src/API_UART.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_UART.o"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:115:66: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
-  115 |                         HAL_UART_Transmit(&huart2, Data, strlen (Data), 1000);
-      |                                                                  ^~~~
-      |                                                                  |
-      |                                                                  uint8_t * {aka unsigned char *}
-In file included from C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/bmp280.h:17,
-                 from ../Core/Src/main.c:24:
+../Core/Src/main.c:120:44: error: incompatible type for argument 1 of 'UART_Read'
+  120 |                   UARTRead_t A = UART_Read(&huart2);
+      |                                            ^~~~~~~
+      |                                            |
+      |                                            UART_HandleTypeDef * {aka struct __UART_HandleTypeDef *}
+In file included from ../Core/Src/main.c:26:
+C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/API_UART.h:17:41: note: expected 'UART_HandleTypeDef' {aka 'struct __UART_HandleTypeDef'} but argument is of type 'UART_HandleTypeDef *' {aka 'struct __UART_HandleTypeDef *'}
+   17 | UARTRead_t UART_Read(UART_HandleTypeDef huart2);
+      |                      ~~~~~~~~~~~~~~~~~~~^~~~~~
+../Core/Src/main.c:120:30: warning: unused variable 'A' [-Wunused-variable]
+  120 |                   UARTRead_t A = UART_Read(&huart2);
+      |                              ^
+../Drivers/API/Src/API_UART.c: In function 'UART_TrasmitSensor':
+../Drivers/API/Src/API_UART.c:25:49: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+   25 |         HAL_UART_Transmit(&huart2, Data, strlen(Data), Delay_Max_UART);
+      |                                                 ^~~~
+      |                                                 |
+      |                                                 uint8_t * {aka unsigned char *}
+In file included from ../Drivers/API/Src/API_UART.c:12:
 C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
    41 | size_t   strlen (const char *);
       |                  ^~~~~~~~~~~~
-../Drivers/API/Src/BMP280_Funtion.c: In function 'BMP_280_Read':
-../Drivers/API/Src/BMP280_Funtion.c:24:12: error: expected identifier before numeric constant
-   24 | #define P0 101325  // Pascales 52=0
-      |            ^~~~~~
-../Drivers/API/Src/BMP280_Funtion.c:49:44: note: in expansion of macro 'P0'
-   49 |                   Dato.altura=altitud-Dato.P0;
-      |                                            ^~
-../Drivers/API/Src/BMP280_Funtion.c:24:12: error: expected identifier before numeric constant
-   24 | #define P0 101325  // Pascales 52=0
-      |            ^~~~~~
-../Drivers/API/Src/BMP280_Funtion.c:50:24: note: in expansion of macro 'P0'
-   50 |                   Dato.P0=Dato.altura;
-      |                        ^~
-make: *** [Drivers/API/Src/subdir.mk:25: Drivers/API/Src/BMP280_Funtion.o] Error 1
+../Drivers/API/Src/API_UART.c: At top level:
+../Drivers/API/Src/API_UART.c:32:12: error: conflicting types for 'UART_Read'; have 'UARTRead_t(UART_HandleTypeDef *)' {aka 'UARTRead_t(struct __UART_HandleTypeDef *)'}
+   32 | UARTRead_t UART_Read(UART_HandleTypeDef*huart){
+      |            ^~~~~~~~~
+In file included from ../Drivers/API/Src/API_UART.c:10:
+C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/API_UART.h:17:12: note: previous declaration of 'UART_Read' with type 'UARTRead_t(UART_HandleTypeDef)' {aka 'UARTRead_t(struct __UART_HandleTypeDef)'}
+   17 | UARTRead_t UART_Read(UART_HandleTypeDef huart2);
+      |            ^~~~~~~~~
+../Drivers/API/Src/API_UART.c:47:6: error: conflicting types for 'HAL_UART_RxCpltCallback'; have 'void(UART_HandleTypeDef)' {aka 'void(struct __UART_HandleTypeDef)'}
+   47 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef huart2) {
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Drivers/API/Src/API_UART.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:748:6: note: previous declaration of 'HAL_UART_RxCpltCallback' with type 'void(UART_HandleTypeDef *)' {aka 'void(struct __UART_HandleTypeDef *)'}
+  748 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+../Drivers/API/Src/API_UART.c: In function 'HAL_UART_RxCpltCallback':
+make: *** Waiting for unfinished jobs....
+../Drivers/API/Src/API_UART.c:53:43: error: incompatible type for argument 1 of 'HAL_UART_Transmit'
+   53 |                         HAL_UART_Transmit(huart2,(uint8_t *)rx_buffer,sizeof(rx_buffer), Delay_Max_UART);
+      |                                           ^~~~~~
+      |                                           |
+      |                                           UART_HandleTypeDef {aka struct __UART_HandleTypeDef}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Drivers/API/Src/API_UART.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:57: note: expected 'UART_HandleTypeDef *' {aka 'struct __UART_HandleTypeDef *'} but argument is of type 'UART_HandleTypeDef' {aka 'struct __UART_HandleTypeDef'}
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                     ~~~~~~~~~~~~~~~~~~~~^~~~~
+make: *** [Drivers/API/Src/subdir.mk:31: Drivers/API/Src/API_UART.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+08:39:19 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/API_UART.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_UART.d" -MT"Drivers/API/Src/API_UART.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_UART.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Drivers/API/Src/API_UART.c: In function 'UART_TrasmitSensor':
+../Drivers/API/Src/API_UART.c:25:49: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+   25 |         HAL_UART_Transmit(&huart2, Data, strlen(Data), Delay_Max_UART);
+      |                                                 ^~~~
+      |                                                 |
+      |                                                 uint8_t * {aka unsigned char *}
+In file included from ../Drivers/API/Src/API_UART.c:12:
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Drivers/API/Src/API_UART.c: At top level:
+../Drivers/API/Src/API_UART.c:47:6: error: conflicting types for 'HAL_UART_RxCpltCallback'; have 'void(UART_HandleTypeDef)' {aka 'void(struct __UART_HandleTypeDef)'}
+   47 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef huart2) {
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Drivers/API/Src/API_UART.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:748:6: note: previous declaration of 'HAL_UART_RxCpltCallback' with type 'void(UART_HandleTypeDef *)' {aka 'void(struct __UART_HandleTypeDef *)'}
+  748 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Drivers/API/Src/API_UART.c: In function 'HAL_UART_RxCpltCallback':
+../Drivers/API/Src/API_UART.c:53:43: error: incompatible type for argument 1 of 'HAL_UART_Transmit'
+   53 |                         HAL_UART_Transmit(huart2,(uint8_t *)rx_buffer,sizeof(rx_buffer), Delay_Max_UART);
+      |                                           ^~~~~~
+      |                                           |
+      |                                           UART_HandleTypeDef {aka struct __UART_HandleTypeDef}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Drivers/API/Src/API_UART.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:57: note: expected 'UART_HandleTypeDef *' {aka 'struct __UART_HandleTypeDef *'} but argument is of type 'UART_HandleTypeDef' {aka 'struct __UART_HandleTypeDef'}
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                     ~~~~~~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:120:30: warning: unused variable 'A' [-Wunused-variable]
+  120 |                   UARTRead_t A = UART_Read(&huart2);
+      |                              ^
+make: *** [Drivers/API/Src/subdir.mk:31: Drivers/API/Src/API_UART.o] Error 1
 make: *** Waiting for unfinished jobs....
 "make -j8 all" terminated with exit code 2. Build might be incomplete.
-22:16:55 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+08:40:51 **** Incremental Build of configuration Debug for project PROYECTO_FINAL ****
 make -j8 all 
-arm-none-eabi-gcc "../Drivers/API/Src/BMP280_Funtion.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/BMP280_Funtion.d" -MT"Drivers/API/Src/BMP280_Funtion.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/BMP280_Funtion.o"
-../Drivers/API/Src/BMP280_Funtion.c:40:12: error: conflicting types for 'BMP_280_Read'; have 'ReadSensor(I2C_HandleTypeDef)'
-   40 | ReadSensor BMP_280_Read(I2C_HandleTypeDef hi2c1){
-      |            ^~~~~~~~~~~~
-In file included from ../Drivers/API/Src/BMP280_Funtion.c:9:
-C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/BMP280_Funtion.h:18:12: note: previous declaration of 'BMP_280_Read' with type 'ReadSensor(I2C_HandleTypeDef,  float)'
-   18 | ReadSensor BMP_280_Read(I2C_HandleTypeDef hi2c1, float p0);
-      |            ^~~~~~~~~~~~
-make: *** [Drivers/API/Src/subdir.mk:25: Drivers/API/Src/BMP280_Funtion.o] Error 1
+arm-none-eabi-size   PROYECTO_FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12496	    252	   1988	  14736	   3990	PROYECTO_FINAL.elf
+Finished building: default.size.stdout
+ 
+08:48:53 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/API_UART.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_UART.d" -MT"Drivers/API/Src/API_UART.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_UART.o"
+../Drivers/API/Src/API_UART.c:25:6: error: conflicting types for 'UART_TrasmitSensor'; have 'void(UART_HandleTypeDef *, ReadSensor)' {aka 'void(struct __UART_HandleTypeDef *, ReadSensor)'}
+   25 | void UART_TrasmitSensor(UART_HandleTypeDef*huart, ReadSensor Dato){
+      |      ^~~~~~~~~~~~~~~~~~
+In file included from ../Drivers/API/Src/API_UART.c:10:
+C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/API_UART.h:16:6: note: previous declaration of 'UART_TrasmitSensor' with type 'void(UART_HandleTypeDef,  ReadSensor)' {aka 'void(struct __UART_HandleTypeDef,  ReadSensor)'}
+   16 | void UART_TrasmitSensor(UART_HandleTypeDef huart2, ReadSensor Dato);
+      |      ^~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/API_UART.c: In function 'UART_TrasmitSensor':
+../Drivers/API/Src/API_UART.c:27:49: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+   27 |         HAL_UART_Transmit(&huart2, Data, strlen(Data), Delay_Max_UART);
+      |                                                 ^~~~
+      |                                                 |
+      |                                                 uint8_t * {aka unsigned char *}
+In file included from ../Drivers/API/Src/API_UART.c:12:
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+make: *** [Drivers/API/Src/subdir.mk:31: Drivers/API/Src/API_UART.o] Error 1
 "make -j8 all" terminated with exit code 2. Build might be incomplete.
-22:17:16 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+08:50:09 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
 make -j8 all 
-arm-none-eabi-gcc "../Drivers/API/Src/BMP280_Funtion.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/BMP280_Funtion.d" -MT"Drivers/API/Src/BMP280_Funtion.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/BMP280_Funtion.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:115:66: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
-  115 |                         HAL_UART_Transmit(&huart2, Data, strlen (Data), 1000);
-      |                                                                  ^~~~
-      |                                                                  |
-      |                                                                  uint8_t * {aka unsigned char *}
-In file included from C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/bmp280.h:17,
-                 from ../Core/Src/main.c:24:
+arm-none-eabi-gcc "../Drivers/API/Src/API_UART.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_UART.d" -MT"Drivers/API/Src/API_UART.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_UART.o"
+../Drivers/API/Src/API_UART.c: In function 'UART_TrasmitSensor':
+../Drivers/API/Src/API_UART.c:27:49: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+   27 |         HAL_UART_Transmit(&huart2, Data, strlen(Data), Delay_Max_UART);
+      |                                                 ^~~~
+      |                                                 |
+      |                                                 uint8_t * {aka unsigned char *}
+In file included from ../Drivers/API/Src/API_UART.c:12:
 C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
    41 | size_t   strlen (const char *);
       |                  ^~~~~~~~~~~~
@@ -62,234 +167,354 @@ Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
 arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
 arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
    text	   data	    bss	    dec	    hex	filename
-  36528	    476	   2372	  39376	   99d0	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+  37224	    476	   2396	  40096	   9ca0	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
 Finished building: default.size.stdout
  
 Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
  
-23:02:03 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+08:50:58 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:117:82: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
-  117 |                                         HAL_UART_Transmit(&huart2, Data, strlen (Data), 1000);
-      |                                                                                  ^~~~
-      |                                                                                  |
-      |                                                                                  uint8_t * {aka unsigned char *}
-In file included from C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/bmp280.h:17,
-                 from ../Core/Src/main.c:24:
-C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-   41 | size_t   strlen (const char *);
-      |                  ^~~~~~~~~~~~
-arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
- 
 arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
-arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
    text	   data	    bss	    dec	    hex	filename
-  36552	    476	   2372	  39400	   99e8	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+  37224	    476	   2396	  40096	   9ca0	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
 Finished building: default.size.stdout
  
-Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
- 
-23:02:58 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+08:51:51 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:117:82: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
-  117 |                                         HAL_UART_Transmit(&huart2, Data, strlen (Data), 1000);
-      |                                                                                  ^~~~
-      |                                                                                  |
-      |                                                                                  uint8_t * {aka unsigned char *}
-In file included from C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/bmp280.h:17,
-                 from ../Core/Src/main.c:24:
+arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+ 
+arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
+arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
+   text	   data	    bss	    dec	    hex	filename
+  36760	    476	   2388	  39624	   9ac8	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+Finished building: default.size.stdout
+ 
+Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
+ 
+08:53:35 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/API_UART.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_UART.d" -MT"Drivers/API/Src/API_UART.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_UART.o"
+../Drivers/API/Src/API_UART.c: In function 'UART_TrasmitSensor':
+../Drivers/API/Src/API_UART.c:27:49: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+   27 |         HAL_UART_Transmit(&huart2, Data, strlen(Data), Delay_Max_UART);
+      |                                                 ^~~~
+      |                                                 |
+      |                                                 uint8_t * {aka unsigned char *}
+In file included from ../Drivers/API/Src/API_UART.c:12:
 C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
    41 | size_t   strlen (const char *);
       |                  ^~~~~~~~~~~~
+At top level:
+../Drivers/API/Src/API_UART.c:23:19: warning: 'BUFFER_READ' defined but not used [-Wunused-variable]
+   23 | static UARTRead_t BUFFER_READ;
+      |                   ^~~~~~~~~~~
+../Drivers/API/Src/API_UART.c:21:17: warning: 'UART_Date' defined but not used [-Wunused-variable]
+   21 | static uint16_t UART_Date;
+      |                 ^~~~~~~~~
+../Drivers/API/Src/API_UART.c:20:16: warning: 'rx_buffer' defined but not used [-Wunused-variable]
+   20 | static uint8_t rx_buffer[BUFFER_SIZE]; // Buffer que almacena los datos recibidos por la UART por interrupción
+      |                ^~~~~~~~~
 arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
  
 arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
 arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
    text	   data	    bss	    dec	    hex	filename
-  36552	    476	   2372	  39400	   99e8	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+  36704	    476	   2388	  39568	   9a90	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
 Finished building: default.size.stdout
  
 Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
  
-23:04:24 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+08:55:05 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
 make -j8 all 
 arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
    text	   data	    bss	    dec	    hex	filename
-  36552	    476	   2372	  39400	   99e8	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+  36704	    476	   2388	  39568	   9a90	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
 Finished building: default.size.stdout
  
-23:06:10 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+08:55:37 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
 make -j8 all 
-arm-none-eabi-gcc "../Drivers/API/Src/BMP280_Funtion.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/BMP280_Funtion.d" -MT"Drivers/API/Src/BMP280_Funtion.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/BMP280_Funtion.o"
+arm-none-eabi-gcc "../Drivers/API/Src/API_UART.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_UART.d" -MT"Drivers/API/Src/API_UART.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_UART.o"
+../Drivers/API/Src/API_UART.c: In function 'UART_TrasmitSensor':
+../Drivers/API/Src/API_UART.c:27:49: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+   27 |         HAL_UART_Transmit(&huart2, Data, strlen(Data), Delay_Max_UART);
+      |                                                 ^~~~
+      |                                                 |
+      |                                                 uint8_t * {aka unsigned char *}
+In file included from ../Drivers/API/Src/API_UART.c:12:
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+At top level:
+../Drivers/API/Src/API_UART.c:23:19: warning: 'BUFFER_READ' defined but not used [-Wunused-variable]
+   23 | static UARTRead_t BUFFER_READ;
+      |                   ^~~~~~~~~~~
+../Drivers/API/Src/API_UART.c:21:17: warning: 'UART_Date' defined but not used [-Wunused-variable]
+   21 | static uint16_t UART_Date;
+      |                 ^~~~~~~~~
+../Drivers/API/Src/API_UART.c:20:16: warning: 'rx_buffer' defined but not used [-Wunused-variable]
+   20 | static uint8_t rx_buffer[BUFFER_SIZE]; // Buffer que almacena los datos recibidos por la UART por interrupción
+      |                ^~~~~~~~~
 arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
  
 arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
 arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
    text	   data	    bss	    dec	    hex	filename
-  36528	    476	   2372	  39376	   99d0	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+  36704	    476	   2388	  39568	   9a90	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
 Finished building: default.size.stdout
  
 Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
  
-23:07:03 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+08:58:13 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
 make -j8 all 
-arm-none-eabi-gcc "../Drivers/API/Src/BMP280_Funtion.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/BMP280_Funtion.d" -MT"Drivers/API/Src/BMP280_Funtion.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/BMP280_Funtion.o"
-arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
- 
-arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
-arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
-   text	   data	    bss	    dec	    hex	filename
-  36568	    476	   2372	  39416	   99f8	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
-Finished building: default.size.stdout
- 
-Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
- 
-23:10:19 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
-make -j8 all 
-arm-none-eabi-gcc "../Drivers/API/Src/BMP280_Funtion.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/BMP280_Funtion.d" -MT"Drivers/API/Src/BMP280_Funtion.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/BMP280_Funtion.o"
+arm-none-eabi-gcc "../Drivers/API/Src/API_UART.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_UART.d" -MT"Drivers/API/Src/API_UART.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_UART.o"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Drivers/API/Src/API_UART.c: In function 'UART_TrasmitSensor':
+../Drivers/API/Src/API_UART.c:27:49: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+   27 |         HAL_UART_Transmit(&huart2, Data, strlen(Data), Delay_Max_UART);
+      |                                                 ^~~~
+      |                                                 |
+      |                                                 uint8_t * {aka unsigned char *}
+In file included from ../Drivers/API/Src/API_UART.c:12:
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+At top level:
+../Drivers/API/Src/API_UART.c:23:19: warning: 'BUFFER_READ' defined but not used [-Wunused-variable]
+   23 | static UARTRead_t BUFFER_READ;
+      |                   ^~~~~~~~~~~
+../Drivers/API/Src/API_UART.c:21:17: warning: 'UART_Date' defined but not used [-Wunused-variable]
+   21 | static uint16_t UART_Date;
+      |                 ^~~~~~~~~
+../Drivers/API/Src/API_UART.c:20:16: warning: 'rx_buffer' defined but not used [-Wunused-variable]
+   20 | static uint8_t rx_buffer[BUFFER_SIZE]; // Buffer que almacena los datos recibidos por la UART por interrupción
+      |                ^~~~~~~~~
+arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+ 
+arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
+arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
+   text	   data	    bss	    dec	    hex	filename
+  36704	    476	   2388	  39568	   9a90	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+Finished building: default.size.stdout
+ 
+Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
+ 
+08:59:50 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/API_UART.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_UART.d" -MT"Drivers/API/Src/API_UART.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_UART.o"
+../Drivers/API/Src/API_UART.c:25:6: error: conflicting types for 'UART_TrasmitSensor'; have 'void(UART_HandleTypeDef *, ReadSensor)' {aka 'void(struct __UART_HandleTypeDef *, ReadSensor)'}
+   25 | void UART_TrasmitSensor(UART_HandleTypeDef*huart, ReadSensor Dato){
+      |      ^~~~~~~~~~~~~~~~~~
+In file included from ../Drivers/API/Src/API_UART.c:10:
+C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/API_UART.h:16:6: note: previous declaration of 'UART_TrasmitSensor' with type 'void(UART_HandleTypeDef,  ReadSensor)' {aka 'void(struct __UART_HandleTypeDef,  ReadSensor)'}
+   16 | void UART_TrasmitSensor(UART_HandleTypeDef huart2, ReadSensor Dato);
+      |      ^~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/API_UART.c: In function 'UART_TrasmitSensor':
+../Drivers/API/Src/API_UART.c:27:49: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+   27 |         HAL_UART_Transmit(&huart2, Data, strlen(Data), Delay_Max_UART);
+      |                                                 ^~~~
+      |                                                 |
+      |                                                 uint8_t * {aka unsigned char *}
+In file included from ../Drivers/API/Src/API_UART.c:12:
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+At top level:
+../Drivers/API/Src/API_UART.c:23:19: warning: 'BUFFER_READ' defined but not used [-Wunused-variable]
+   23 | static UARTRead_t BUFFER_READ;
+      |                   ^~~~~~~~~~~
+../Drivers/API/Src/API_UART.c:21:17: warning: 'UART_Date' defined but not used [-Wunused-variable]
+   21 | static uint16_t UART_Date;
+      |                 ^~~~~~~~~
+../Drivers/API/Src/API_UART.c:20:16: warning: 'rx_buffer' defined but not used [-Wunused-variable]
+   20 | static uint8_t rx_buffer[BUFFER_SIZE]; // Buffer que almacena los datos recibidos por la UART por interrupción
+      |                ^~~~~~~~~
+make: *** [Drivers/API/Src/subdir.mk:31: Drivers/API/Src/API_UART.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+09:01:39 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/API_UART.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_UART.d" -MT"Drivers/API/Src/API_UART.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_UART.o"
+../Drivers/API/Src/API_UART.c:25:6: error: conflicting types for 'UART_TrasmitSensor'; have 'void(UART_HandleTypeDef *, ReadSensor)' {aka 'void(struct __UART_HandleTypeDef *, ReadSensor)'}
+   25 | void UART_TrasmitSensor(UART_HandleTypeDef *huart, ReadSensor Dato){
+      |      ^~~~~~~~~~~~~~~~~~
+In file included from ../Drivers/API/Src/API_UART.c:10:
+C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/API_UART.h:16:6: note: previous declaration of 'UART_TrasmitSensor' with type 'void(UART_HandleTypeDef,  ReadSensor)' {aka 'void(struct __UART_HandleTypeDef,  ReadSensor)'}
+   16 | void UART_TrasmitSensor(UART_HandleTypeDef huart2, ReadSensor Dato);
+      |      ^~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/API_UART.c: In function 'UART_TrasmitSensor':
+../Drivers/API/Src/API_UART.c:27:49: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+   27 |         HAL_UART_Transmit(&huart2, Data, strlen(Data), Delay_Max_UART);
+      |                                                 ^~~~
+      |                                                 |
+      |                                                 uint8_t * {aka unsigned char *}
+In file included from ../Drivers/API/Src/API_UART.c:12:
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+At top level:
+../Drivers/API/Src/API_UART.c:23:19: warning: 'BUFFER_READ' defined but not used [-Wunused-variable]
+   23 | static UARTRead_t BUFFER_READ;
+      |                   ^~~~~~~~~~~
+../Drivers/API/Src/API_UART.c:21:17: warning: 'UART_Date' defined but not used [-Wunused-variable]
+   21 | static uint16_t UART_Date;
+      |                 ^~~~~~~~~
+../Drivers/API/Src/API_UART.c:20:16: warning: 'rx_buffer' defined but not used [-Wunused-variable]
+   20 | static uint8_t rx_buffer[BUFFER_SIZE]; // Buffer que almacena los datos recibidos por la UART por interrupción
+      |                ^~~~~~~~~
+make: *** [Drivers/API/Src/subdir.mk:31: Drivers/API/Src/API_UART.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+09:02:35 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/API_UART.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_UART.d" -MT"Drivers/API/Src/API_UART.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_UART.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Drivers/API/Src/API_UART.c: In function 'UART_TrasmitSensor':
+../Drivers/API/Src/API_UART.c:27:49: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+   27 |         HAL_UART_Transmit(&huart2, Data, strlen(Data), Delay_Max_UART);
+      |                                                 ^~~~
+      |                                                 |
+      |                                                 uint8_t * {aka unsigned char *}
+In file included from ../Drivers/API/Src/API_UART.c:12:
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+At top level:
+../Drivers/API/Src/API_UART.c:23:19: warning: 'BUFFER_READ' defined but not used [-Wunused-variable]
+   23 | static UARTRead_t BUFFER_READ;
+      |                   ^~~~~~~~~~~
+../Drivers/API/Src/API_UART.c:21:17: warning: 'UART_Date' defined but not used [-Wunused-variable]
+   21 | static uint16_t UART_Date;
+      |                 ^~~~~~~~~
+../Drivers/API/Src/API_UART.c:20:16: warning: 'rx_buffer' defined but not used [-Wunused-variable]
+   20 | static uint8_t rx_buffer[BUFFER_SIZE]; // Buffer que almacena los datos recibidos por la UART por interrupción
+      |                ^~~~~~~~~
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:114:66: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
-  114 |                         HAL_UART_Transmit(&huart2, Data, strlen (Data), 1000);
-      |                                                                  ^~~~
-      |                                                                  |
-      |                                                                  uint8_t * {aka unsigned char *}
-In file included from C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/bmp280.h:17,
-                 from ../Core/Src/main.c:24:
+../Core/Src/main.c:114:20: error: incompatible type for argument 1 of 'UART_TrasmitSensor'
+  114 | UART_TrasmitSensor(huart2, BUFFER_DATO);
+      |                    ^~~~~~
+      |                    |
+      |                    UART_HandleTypeDef {aka struct __UART_HandleTypeDef}
+In file included from ../Core/Src/main.c:26:
+C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/API_UART.h:16:45: note: expected 'UART_HandleTypeDef *' {aka 'struct __UART_HandleTypeDef *'} but argument is of type 'UART_HandleTypeDef' {aka 'struct __UART_HandleTypeDef'}
+   16 | void UART_TrasmitSensor(UART_HandleTypeDef *huart, ReadSensor Dato);
+      |                         ~~~~~~~~~~~~~~~~~~~~^~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+09:03:13 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/API_UART.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_UART.d" -MT"Drivers/API/Src/API_UART.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_UART.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Drivers/API/Src/API_UART.c: In function 'UART_TrasmitSensor':
+../Drivers/API/Src/API_UART.c:27:49: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+   27 |         HAL_UART_Transmit(&huart2, Data, strlen(Data), Delay_Max_UART);
+      |                                                 ^~~~
+      |                                                 |
+      |                                                 uint8_t * {aka unsigned char *}
+In file included from ../Drivers/API/Src/API_UART.c:12:
 C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
    41 | size_t   strlen (const char *);
       |                  ^~~~~~~~~~~~
-../Core/Src/main.c:121:82: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
-  121 |                                         HAL_UART_Transmit(&huart2, Data, strlen (Data), 1000);
-      |                                                                                  ^~~~
-      |                                                                                  |
-      |                                                                                  uint8_t * {aka unsigned char *}
-In file included from C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/bmp280.h:17,
-                 from ../Core/Src/main.c:24:
-C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-   41 | size_t   strlen (const char *);
-      |                  ^~~~~~~~~~~~
-arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
- 
-arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
-arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
-   text	   data	    bss	    dec	    hex	filename
-  36712	    476	   2372	  39560	   9a88	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
-Finished building: default.size.stdout
- 
-Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
- 
-23:11:36 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
-make -j8 all 
-arm-none-eabi-gcc "../Drivers/API/Src/BMP280_Funtion.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/BMP280_Funtion.d" -MT"Drivers/API/Src/BMP280_Funtion.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/BMP280_Funtion.o"
-arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
- 
-arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
-arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
-   text	   data	    bss	    dec	    hex	filename
-  36712	    476	   2372	  39560	   9a88	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
-Finished building: default.size.stdout
- 
-Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
- 
-23:12:54 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
-make -j8 all 
-arm-none-eabi-gcc "../Drivers/API/Src/BMP280_Funtion.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/BMP280_Funtion.d" -MT"Drivers/API/Src/BMP280_Funtion.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/BMP280_Funtion.o"
-arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
- 
-arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
-arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
-   text	   data	    bss	    dec	    hex	filename
-  36720	    476	   2372	  39568	   9a90	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
-Finished building: default.size.stdout
- 
-Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
- 
-23:13:34 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
-make -j8 all 
-arm-none-eabi-gcc "../Drivers/API/Src/BMP280_Funtion.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/BMP280_Funtion.d" -MT"Drivers/API/Src/BMP280_Funtion.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/BMP280_Funtion.o"
-arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
- 
-arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
-arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
-   text	   data	    bss	    dec	    hex	filename
-  36712	    476	   2372	  39560	   9a88	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
-Finished building: default.size.stdout
- 
-Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
- 
-23:14:39 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
-make -j8 all 
-arm-none-eabi-gcc "../Drivers/API/Src/BMP280_Funtion.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/BMP280_Funtion.d" -MT"Drivers/API/Src/BMP280_Funtion.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/BMP280_Funtion.o"
-arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
- 
-arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
-arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
-   text	   data	    bss	    dec	    hex	filename
-  36736	    476	   2372	  39584	   9aa0	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
-Finished building: default.size.stdout
- 
-Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
- 
-23:16:46 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
-make -j8 all 
-arm-none-eabi-gcc "../Drivers/API/Src/BMP280_Funtion.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/BMP280_Funtion.d" -MT"Drivers/API/Src/BMP280_Funtion.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/BMP280_Funtion.o"
-arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
- 
-arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
-arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
-   text	   data	    bss	    dec	    hex	filename
-  36768	    476	   2372	  39616	   9ac0	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
-Finished building: default.size.stdout
- 
-Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
- 
-23:17:49 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+At top level:
+../Drivers/API/Src/API_UART.c:23:19: warning: 'BUFFER_READ' defined but not used [-Wunused-variable]
+   23 | static UARTRead_t BUFFER_READ;
+      |                   ^~~~~~~~~~~
+../Drivers/API/Src/API_UART.c:21:17: warning: 'UART_Date' defined but not used [-Wunused-variable]
+   21 | static uint16_t UART_Date;
+      |                 ^~~~~~~~~
+../Drivers/API/Src/API_UART.c:20:16: warning: 'rx_buffer' defined but not used [-Wunused-variable]
+   20 | static uint8_t rx_buffer[BUFFER_SIZE]; // Buffer que almacena los datos recibidos por la UART por interrupción
+      |                ^~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:114:20: error: incompatible type for argument 1 of 'UART_TrasmitSensor'
+  114 | UART_TrasmitSensor(huart2, BUFFER_DATO);
+      |                    ^~~~~~
+      |                    |
+      |                    UART_HandleTypeDef {aka struct __UART_HandleTypeDef}
+In file included from ../Core/Src/main.c:26:
+C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/API_UART.h:17:45: note: expected 'UART_HandleTypeDef *' {aka 'struct __UART_HandleTypeDef *'} but argument is of type 'UART_HandleTypeDef' {aka 'struct __UART_HandleTypeDef'}
+   17 | void UART_TrasmitSensor(UART_HandleTypeDef *huart,ReadSensor Dato);
+      |                         ~~~~~~~~~~~~~~~~~~~~^~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+09:03:59 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:114:66: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
-  114 |                         HAL_UART_Transmit(&huart2, Data, strlen (Data), 1000);
-      |                                                                  ^~~~
-      |                                                                  |
-      |                                                                  uint8_t * {aka unsigned char *}
-In file included from C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/bmp280.h:17,
-                 from ../Core/Src/main.c:24:
-C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-   41 | size_t   strlen (const char *);
-      |                  ^~~~~~~~~~~~
-../Core/Src/main.c:121:82: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
-  121 |                                         HAL_UART_Transmit(&huart2, Data, strlen (Data), 1000);
-      |                                                                                  ^~~~
-      |                                                                                  |
-      |                                                                                  uint8_t * {aka unsigned char *}
-In file included from C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc/bmp280.h:17,
-                 from ../Core/Src/main.c:24:
-C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-   41 | size_t   strlen (const char *);
-      |                  ^~~~~~~~~~~~
 arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
  
 arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
 arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
    text	   data	    bss	    dec	    hex	filename
-  36776	    476	   2372	  39624	   9ac8	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+  36664	    476	   2388	  39528	   9a68	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
 Finished building: default.size.stdout
  
 Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
+ 
+09:06:07 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+ 
+arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
+arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
+   text	   data	    bss	    dec	    hex	filename
+  36768	    476	   2388	  39632	   9ad0	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+Finished building: default.size.stdout
+ 
+Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
+ 
+09:12:48 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/API_UART.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_UART.d" -MT"Drivers/API/Src/API_UART.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_UART.o"
+../Drivers/API/Src/API_UART.c: In function 'UART_TrasmitSensor':
+../Drivers/API/Src/API_UART.c:27:49: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+   27 |         HAL_UART_Transmit(&huart2, Data, strlen(Data), Delay_Max_UART);
+      |                                                 ^~~~
+      |                                                 |
+      |                                                 uint8_t * {aka unsigned char *}
+In file included from ../Drivers/API/Src/API_UART.c:12:
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+At top level:
+../Drivers/API/Src/API_UART.c:23:19: warning: 'BUFFER_READ' defined but not used [-Wunused-variable]
+   23 | static UARTRead_t BUFFER_READ;
+      |                   ^~~~~~~~~~~
+arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+ 
+arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
+arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
+   text	   data	    bss	    dec	    hex	filename
+  36832	    476	   2388	  39696	   9b10	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+Finished building: default.size.stdout
+ 
+Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
+ 
+09:14:18 **** Incremental Build of configuration Debug for project TRABAJO_FINAL_SISTEMA_CALEFACCION ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/TRABAJO_FINAL_SISTEMA_CALEFACCION/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TRABAJO_FINAL_SISTEMA_CALEFACCION.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\TRABAJO_FINAL_SISTEMA_CALEFACCION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TRABAJO_FINAL_SISTEMA_CALEFACCION.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+ 
+arm-none-eabi-size   TRABAJO_FINAL_SISTEMA_CALEFACCION.elf 
+arm-none-eabi-objdump -h -S  TRABAJO_FINAL_SISTEMA_CALEFACCION.elf  > "TRABAJO_FINAL_SISTEMA_CALEFACCION.list"
+   text	   data	    bss	    dec	    hex	filename
+  36728	    476	   2388	  39592	   9aa8	TRABAJO_FINAL_SISTEMA_CALEFACCION.elf
+Finished building: default.size.stdout
+ 
+Finished building: TRABAJO_FINAL_SISTEMA_CALEFACCION.list
+ 
+09:15:41 **** Incremental Build of configuration Debug for project PROYECTO_FINAL ****
+make -j8 all 
+arm-none-eabi-size   PROYECTO_FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12496	    252	   1988	  14736	   3990	PROYECTO_FINAL.elf
+Finished building: default.size.stdout
  
