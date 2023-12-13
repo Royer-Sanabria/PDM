@@ -1,0 +1,61 @@
+/*
+ * BMP280_Funtion.c
+ *
+ *  Created on: Dec 12, 2023
+ *      Author: Royer Sanabria
+ */
+
+#include "bmp280.h"
+#include "BMP280_Funtion.h"
+#include "main.h"
+#include "API_Delay.h"
+
+#include <stdint.h>
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define Delay_MAX_Trasmit 100
+static bool_t Flag_Delay;
+static BMP280_HandleTypedef bmp280;
+
+static uint16_t size;
+static uint8_t Data[256];
+
+void BMP_280_Init2(I2C_HandleTypeDef hi2c1){
+	 bmp280_init_default_params(&bmp280.params);
+		bmp280.addr = BMP280_I2C_ADDRESS_0;
+		bmp280.i2c = &hi2c1;
+		if (!bmp280_init(&bmp280, &bmp280.params)) {
+			Error_Handler();
+			}
+		}
+
+ReadSensor BMP_280_Read(I2C_HandleTypeDef hi2c1){
+float pressure, temperature, humidity;
+	ReadSensor Dato;
+	  	  if (!bmp280_read_float(&bmp280, &temperature, &pressure, &humidity)) {
+	  	  	  Error_Handler();
+	  	  		}
+	  	  Dato.Temperatura=temperature;
+	  	  Dato.Presion=pressure;
+return Dato;
+}
+
+float BMP_280_Altura (ReadSensor){
+	const float temperatura_estandar = 288.15;  // Kelvin
+	    const float tasa_variacion_temperatura = 0.0065;  // K/m
+	    const float presion_estandar = 101325;  // Pascales
+	    const float constante_gas = 287.05;  // J/(kg*K)
+
+	    // Convertir temperatura a Kelvin
+	    float temperatura_kelvin = ReadSensor. + 273.15;
+
+	    // Calcular la altitud utilizando la fórmula barométrica estándar
+	    float altitud = ((temperatura_estandar / tasa_variacion_temperatura) *
+	                     (1 - pow((presion / presion_estandar), (constante_gas / (tasa_variacion_temperatura * constante_gas))))) - 5.5;
+
+	    return altitud;
+	}
+}

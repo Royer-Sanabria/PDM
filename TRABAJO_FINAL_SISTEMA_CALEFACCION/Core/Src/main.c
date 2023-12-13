@@ -22,6 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "bmp280.h"
+#include "BMP280_Funtion.h"
 #include <stdint.h>
 #include <stdio.h>
 #include <stdbool.h>
@@ -49,13 +50,7 @@ I2C_HandleTypeDef hi2c1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-
-/*
-BMP280_HandleTypedef bmp280;
-float pressure, temperature, humidity;
-uint16_t size;
 uint8_t Data[256];
-*/
 
 /* USER CODE END PV */
 
@@ -105,29 +100,7 @@ int main(void)
   MX_I2C1_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-
-  BMP_280_Init2(hi2c1, huart2);
-/*
-  bmp280_init_default_params(&bmp280.params);
-	bmp280.addr = BMP280_I2C_ADDRESS_0;
-	bmp280.i2c = &hi2c1;
-	bmp280_init(&bmp280, &bmp280.params);
-	//bool bme280p = bmp280.id == BME280_CHIP_ID;
-*/
-	/*uint8_t Data[256];
-
-		if (!bmp280_init(&bmp280, &bmp280.params)) {
-			 Error_Handler();
-		}
-		else {
-		bool bme280p = bmp280.id == BME280_CHIP_ID;
-		sprintf((char *)Data, "Dispositivo detectado %s\r\n", bme280p ? "BME280" : "BMP280");
-			HAL_UART_Transmit(&huart2, Data, strlen (Data), 1000);
-
-	}
-	//BMP_280_Init(bmp280,hi2c1,huart2);
-
-*/
+  BMP_280_Init2(hi2c1);
 
   /* USER CODE END 2 */
 
@@ -135,18 +108,20 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-BMP_280_Read(hi2c1, huart2);
-	  /*
-	  HAL_Delay(1000);
+	  ReadSensor B;
+B=BMP_280_ConfigP0(hi2c1);
+sprintf((char *)Data,"Pressure: %.2f Pa, Temperature: %.2f, Altitud To: %.2f \r\n",B.Presion, B.Temperatura, B.altura);
+	  		HAL_UART_Transmit(&huart2, Data, strlen (Data), 1000);
+	  		HAL_Delay(5000);
 
-  	  while (!bmp280_read_float(&bmp280, &temperature, &pressure, &humidity)) {
-  	  			size = sprintf((char *)Data,"Temperature/pressure reading failed\r\n");
-  	  			HAL_UART_Transmit(&huart2, Data, size, 1000);
-  	  		}
+	  while (1){
+		  ReadSensor A;
+		  A=BMP_280_Read(hi2c1);
+		  sprintf((char *)Data,"Pressure: %.2f Pa, Temperature: %.2f, Altitud (m): %.2f \r\n",A.Presion, A.Temperatura, A.altura);
+		  	  		HAL_UART_Transmit(&huart2, Data, strlen (Data), 1000);
+		  	  		HAL_Delay(1000);
+	  }
 
-	  	  		size = sprintf((char *)Data,"Pressure: %.2f Pa, Temperature: %.2f \r\n",pressure, temperature);
-	  	  		HAL_UART_Transmit(&huart2, Data, size, 1000);
-*/
 
     /* USER CODE END WHILE */
 

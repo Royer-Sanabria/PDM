@@ -8,9 +8,15 @@
 #ifndef API_INC_BMP280_FUNTION_H_
 #define API_INC_BMP280_FUNTION_H_
 
+typedef struct ReadSensor {
+    float Temperatura;
+    float Presion;
+    float altura;
+    float Point0;
+} ReadSensor;
 
-void BMP_280_Read(I2C_HandleTypeDef hi2c1, UART_HandleTypeDef huart2);
-
-void BMP_280_Init2(I2C_HandleTypeDef hi2c1, UART_HandleTypeDef huart2);
+ReadSensor BMP_280_Read(I2C_HandleTypeDef hi2c1);
+void BMP_280_Init2(I2C_HandleTypeDef hi2c1);
+ReadSensor BMP_280_ConfigP0(I2C_HandleTypeDef hi2c1);
 
 #endif /* API_INC_BMP280_FUNTION_H_ */

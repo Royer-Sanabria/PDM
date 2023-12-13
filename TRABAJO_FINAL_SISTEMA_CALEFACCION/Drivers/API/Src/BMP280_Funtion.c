@@ -8,44 +8,59 @@
 #include "bmp280.h"
 #include "BMP280_Funtion.h"
 #include "main.h"
+#include "API_Delay.h"
+#include "math.h"
+
 #include <stdint.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
 
-#define Delay_MAX_Trasmit 100
+#define L  0.0065  // K/m
+#define g  9.80665  // m/s^2
+#define M  0.02896  // kg/mol
+#define R  8.314  // J/(mol·K)
+#define P0 101325  // Pascales 52=0
 
 static BMP280_HandleTypedef bmp280;
-static float pressure, temperature, humidity;
-static uint16_t size;
-static uint8_t Data[256];
+static float Point0;
 
-void BMP_280_Init2(I2C_HandleTypeDef hi2c1, UART_HandleTypeDef huart2){
+
+void BMP_280_Init2(I2C_HandleTypeDef hi2c1){
+	Point0=0;
 	 bmp280_init_default_params(&bmp280.params);
 		bmp280.addr = BMP280_I2C_ADDRESS_0;
 		bmp280.i2c = &hi2c1;
-
-		while (!bmp280_init(&bmp280, &bmp280.params)) {
-				sprintf((char *)Data, "B\n");
-				HAL_UART_Transmit(&huart2, Data, strlen (Data), Delay_MAX_Trasmit);
+		if (!bmp280_init(&bmp280, &bmp280.params)) {
+			Error_Handler();
 			}
-			bool bme280p = bmp280.id == BME280_CHIP_ID;
-			sprintf((char *)Data, "Sensor Encontrado %s\n", bme280p ? "BME280\r\n" : "BMP280\r\n");
-				HAL_UART_Transmit(&huart2, Data, strlen (Data), Delay_MAX_Trasmit);
+		HAL_Delay(150);
+		}
 
-}
-
-void BMP_280_Read(I2C_HandleTypeDef hi2c1, UART_HandleTypeDef huart2){
-
-	HAL_Delay(1000);
-
+ReadSensor BMP_280_Read(I2C_HandleTypeDef hi2c1){
+float pressure, temperature, humidity;
+	ReadSensor Dato;
 	  	  if (!bmp280_read_float(&bmp280, &temperature, &pressure, &humidity)) {
-	  	  			size = sprintf((char *)Data,"Sin conexión con el sensor\r\n");
-	  	  			HAL_UART_Transmit(&huart2, Data, size, Delay_MAX_Trasmit);
-	  	  			Error_Handler();
+	  	  	  Error_Handler();
 	  	  		}
+	  	 float temperatura_kelvin = temperature + 273.15;
+	  	    // Cálculo de la altitud
+	  	    float altitud = (temperatura_kelvin / L) * (1 - exp((R * L) / (g * M) * (log(pressure) - log(P0))));
+	  	  Dato.Temperatura=temperature;
+	  	  Dato.Presion=pressure;
+	  	  if(altitud-Point0<0){
+	  		  altitud=0;
+	  	  }
+	  	  else {
+	  		  Dato.altura=altitud-Point0;
+	  	  }
 
-		  	  		size = sprintf((char *)Data,"Pressure: %.2f Pa, Temperature: %.2f \r\n",pressure, temperature);
-		  	  		HAL_UART_Transmit(&huart2, Data, size, Delay_MAX_Trasmit);
+return Dato;
 }
+
+ReadSensor BMP_280_ConfigP0(I2C_HandleTypeDef hi2c1){
+	ReadSensor Dato= BMP_280_Read(hi2c1);
+	Point0=Dato.altura;
+	return Dato;
+	}
