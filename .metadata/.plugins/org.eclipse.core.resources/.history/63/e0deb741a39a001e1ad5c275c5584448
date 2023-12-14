@@ -16,8 +16,8 @@ typedef struct  {
     float AlturaSet;
 } ReadSensor;
 
-ReadSensor BMP_280_Read(); //Lee los valores de temperatura y presión atmosferica
-void BMP_280_Init2(); //
-void BMP_280_ConfigP0();//Lee el sensor y configura la lectura como punto base de altura.
+ReadSensor BMP_280_Read();
+void BMP_280_Init2();
+void BMP_280_ConfigP0();
 
 #endif /* API_INC_BMP280_FUNTION_H_ */
