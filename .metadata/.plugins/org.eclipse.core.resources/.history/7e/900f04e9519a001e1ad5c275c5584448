@@ -1,0 +1,21 @@
+/*
+ * MEF.h
+ *
+ *  Created on: Dec 14, 2023
+ *      Author: Royer Sanabria
+ */
+
+#ifndef API_INC_MEF_H_
+#define API_INC_MEF_H_
+extern UART_HandleTypeDef huart2;
+enum Estado {
+    Inicio,
+	Altura_Seteo,
+	Alerta_Abajo,
+	Altura_Alcanzada,
+	Alerta_Arriba
+};
+
+void MEF();
+
+#endif /* API_INC_MEF_H_ */

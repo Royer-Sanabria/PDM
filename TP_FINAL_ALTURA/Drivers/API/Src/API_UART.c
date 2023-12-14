@@ -24,7 +24,7 @@ static UARTRead_t BUFFER_READ;
 
 void UART_TrasmitSensor(ReadSensor Dato){
 	uint16_t size;
-	sprintf((char *)Data,"Presion: %.2f Pa, Temperatura: %.2f, Altura: %.2f \r\n",Dato.Presion, Dato.Temperatura, Dato.altura);
+	sprintf((char *)Data,"Presion: %.2f Pa, Temperatura: %.2f, Altura: %.2f, SetPoint: %.2f \r\n",Dato.Presion, Dato.Temperatura, Dato.altura, Dato.AlturaSet);
 	HAL_UART_Transmit(&huart2,Data, strlen(Data), Delay_Max_UART);
 }
 

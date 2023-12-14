@@ -1,0 +1,62 @@
+/*
+ * MEF.c
+ *
+ *  Created on: Dec 14, 2023
+ *      Author: Royer Sanabria
+ */
+#include "main.h"
+#include "BMP280_Funtion.h"
+#include "API_Delay.h"
+#include "API_UART.h"
+#include "MEF.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define Tolerancia 10 // tolerancia 10%
+#define rango 2 // limites inferior y superior de alarmas
+
+static enum EstadoMef FlagMEF=Inicio;
+static char mensaje;
+static uint8_t Set_Altura;
+static float Limites[]={0.0, 0.85, 1.2};
+extern UART_HandleTypeDef huart2;
+extern I2C_HandleTypeDef hi2c1;
+
+
+void MEF(){
+
+	switch (FlagMEF){
+
+	case Inicio:
+char mensaje[]="Indique la altura de seteo: \r\n";
+UART_TrasmitMessage(mensaje);
+FlagMEF=Altura_Seteo;
+break;
+
+	case Altura_Seteo:
+		UARTRead_t AlturaSeteo=UART_Read();
+		if(AlturaSeteo.estado){
+		    BMP_280_ConfigP0(hi2c1);
+		    BMP_280_SetPoint(AlturaSeteo.dato);
+		    ReadSensor A= BMP_280_Read();
+		    UART_TrasmitSensor(A);
+
+		}
+		break;
+
+	default:
+	FlagMEF=Inicio;
+	}
+}
+
+EstadoAlerta_t ControlAlerta(){
+	enum EstadoMef Control;
+	ReadSensor Dat=BMP_280_Read();
+if (Dat.AlturaSet/Dat.altura<Limites[0]){
+	Control=Alerta_Abajo;
+	}
+else if(Dat.AlturaSet/Dat.altura>Limites[0] && Dat.AlturaSet/Dat.altura>Limites[1] )
+
+
+
+}

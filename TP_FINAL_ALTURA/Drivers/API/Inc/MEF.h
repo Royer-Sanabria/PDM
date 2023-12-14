@@ -8,14 +8,18 @@
 #ifndef API_INC_MEF_H_
 #define API_INC_MEF_H_
 extern UART_HandleTypeDef huart2;
-enum Estado {
+enum EstadoMef {
     Inicio,
 	Altura_Seteo,
 	Alerta_Abajo,
 	Altura_Alcanzada,
-	Alerta_Arriba
+	Alerta_Arriba,
+	Control_Alerta
 };
 
-void MEF();
+typedef enum EstadoMef EstadoAlerta_t;
 
+
+void MEF();
+EstadoAlerta_t ControlAlerta();
 #endif /* API_INC_MEF_H_ */

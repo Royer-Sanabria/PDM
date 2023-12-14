@@ -13,6 +13,7 @@ typedef struct  {
     float Presion;
     float altura;
     float Point0;
+    float AlturaSet;
 } ReadSensor;
 
 ReadSensor BMP_280_Read();

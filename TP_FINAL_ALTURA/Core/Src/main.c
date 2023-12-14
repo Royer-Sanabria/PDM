@@ -111,7 +111,7 @@ delayInit(&DelayPrint, 500);
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
+/*
 	  BUFFER_DATO=BMP_280_Read(hi2c1);
 	  if(delayRead(&DelayPrint))UART_TrasmitSensor(BUFFER_DATO);
 
@@ -124,6 +124,7 @@ delayInit(&DelayPrint, 500);
 	  	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, SET);}
 
 HAL_Delay(200);
+*/
 MEF();
 
     /* USER CODE END WHILE */

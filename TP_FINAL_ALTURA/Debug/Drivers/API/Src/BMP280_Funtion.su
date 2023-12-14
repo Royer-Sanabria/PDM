@@ -1,3 +1,4 @@
-../Drivers/API/Src/BMP280_Funtion.c:32:6:BMP_280_Init2	8	static
-../Drivers/API/Src/BMP280_Funtion.c:43:12:BMP_280_Read	88	static
-../Drivers/API/Src/BMP280_Funtion.c:64:6:BMP_280_ConfigP0	24	static
+../Drivers/API/Src/BMP280_Funtion.c:33:6:BMP_280_Init2	8	static
+../Drivers/API/Src/BMP280_Funtion.c:44:12:BMP_280_Read	64	static
+../Drivers/API/Src/BMP280_Funtion.c:66:6:BMP_280_SetPoint	16	static
+../Drivers/API/Src/BMP280_Funtion.c:70:6:BMP_280_ConfigP0	32	static

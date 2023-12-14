@@ -25,6 +25,7 @@
 
 static BMP280_HandleTypedef bmp280;
 static float Point0;
+static float PointSet=0;
 I2C_HandleTypeDef hi2c1;
 
 
@@ -51,6 +52,8 @@ float pressure, temperature, humidity;
 	  	    float altitud = (temperatura_kelvin / L) * (1 - exp((R * L) / (g * M) * (log(pressure) - log(P0))));
 	  	  Dato.Temperatura=temperature;
 	  	  Dato.Presion=pressure;
+	  	  Dato.AlturaSet=PointSet;
+	  	  Dato.AlturaSet=PointSet;
 	  	  if(altitud-Point0<0){
 	  		  altitud=0;
 	  	  }
@@ -59,6 +62,9 @@ float pressure, temperature, humidity;
 	  	  }
 
 return Dato;
+}
+void BMP_280_SetPoint(uint8_t PointS){
+	PointSet=PointS;
 }
 
 void BMP_280_ConfigP0(){
