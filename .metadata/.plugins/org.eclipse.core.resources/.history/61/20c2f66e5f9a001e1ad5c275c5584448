@@ -18,7 +18,7 @@
 static enum EstadoMef FlagMEF=Inicio;
 static char mensaje;
 static uint8_t Set_Altura;
-static bool flagDelay=true;
+static bool flagDelay=false;
 delay_t MyDelay[2];
 static float Limites[]={0.85, 1.20};
 extern UART_HandleTypeDef huart2;
@@ -27,9 +27,9 @@ extern I2C_HandleTypeDef hi2c1;
 
 void MEF(){
 	if (flagDelay){
-		delayInit(&MyDelay[0], 50);//delay de togleo de alerta alta
-		delayInit(&MyDelay[1], 200);//delay de togleo de alerta baja
-		delayInit(&MyDelay[2], 100);//delay de print en uart
+		delayInit(&MyDelay[0], 100);//delay de togleo de alerta alta
+		delayInit(&MyDelay[1], 500);//delay de togleo de alerta baja
+		delayInit(&MyDelay[2], 300);//delay de print en uart
 	flagDelay=false;
 	}
 
@@ -58,24 +58,23 @@ break;
 		break;
 
 	case Alerta_Abajo:
-		Dato= BMP_280_Read();
-		if(delayRead(&MyDelay[1])) HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-		UART_TrasmitSensor(Dato);
-
+	     Dato= BMP_280_Read();
+	if(delayRead(&MyDelay[2])) UART_TrasmitSensor(Dato);
+	if(delayRead(&MyDelay[1])) HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
 
 		FlagMEF= Control_Alerta;
 		break;
 
 	case Altura_Alcanzada:
 	     Dato= BMP_280_Read();
-	 	UART_TrasmitSensor(Dato);
+	 	if(delayRead(&MyDelay[2])) UART_TrasmitSensor(Dato);
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, SET);
 		FlagMEF= Control_Alerta;
 		break;
 
 	case Alerta_Arriba:
 	     Dato= BMP_280_Read();
-	     UART_TrasmitSensor(Dato);
+	 	if(delayRead(&MyDelay[2])) if(delayRead(&MyDelay[2])) UART_TrasmitSensor(Dato);
 		if(delayRead(&MyDelay[0])) HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
 		FlagMEF= Control_Alerta;
 		break;
@@ -87,7 +86,7 @@ break;
 EstadoAlerta_t ControlAlerta(){
 	enum EstadoMef Control;
 	ReadSensor Dat=BMP_280_Read();
-if (Dat.AlturaSet/Dat.altura>=Limites[2]){
+if (Dat.AlturaSet/Dat.altura<Limites[0]){
 	Control=Alerta_Abajo;
 	}
 else if(Dat.AlturaSet/Dat.altura>Limites[0] && Dat.AlturaSet/Dat.altura>Limites[1] ) {
@@ -98,7 +97,3 @@ else {
 }
 return Control;
 }
-void MEF_Init(){
-	flagDelay=true;
-	FlagMEF=Inicio;
-	}

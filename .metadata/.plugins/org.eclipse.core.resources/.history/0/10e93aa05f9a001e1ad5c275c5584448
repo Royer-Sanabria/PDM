@@ -52,6 +52,7 @@
 extern I2C_HandleTypeDef hi2c1;
 extern UART_HandleTypeDef huart2;
 static ReadSensor BUFFER_DATO;
+delay_t DelayPrint;
 UARTRead_t ReadUART;
 
 /* USER CODE END PV */
@@ -103,19 +104,28 @@ int main(void)
   /* USER CODE BEGIN 2 */
   BMP_280_Init2();
  UART_Init2();
- debounceFSM_init();
- /* USER CODE END 2 */
+delayInit(&DelayPrint, 500);
+  /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-if(readKey()){
-	MEF_Init();
-}
-else {
+/*
+	  BUFFER_DATO=BMP_280_Read(hi2c1);
+	  if(delayRead(&DelayPrint))UART_TrasmitSensor(BUFFER_DATO);
+
+	  ReadUART=UART_Read();
+
+	  	  if(ReadUART.dato>25){
+	  		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, RESET);
+	  	  }
+	  	  else {
+	  	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, SET);}
+
+HAL_Delay(200);
+*/
 MEF();
-}
 
     /* USER CODE END WHILE */
 

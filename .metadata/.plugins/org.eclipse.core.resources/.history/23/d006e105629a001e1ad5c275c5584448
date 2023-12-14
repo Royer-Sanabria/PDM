@@ -58,9 +58,9 @@ break;
 		break;
 
 	case Alerta_Abajo:
-		Dato= BMP_280_Read();
 		if(delayRead(&MyDelay[1])) HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-		UART_TrasmitSensor(Dato);
+		Dato= BMP_280_Read();
+	if(delayRead(&MyDelay[2])) UART_TrasmitSensor(Dato);
 
 
 		FlagMEF= Control_Alerta;
@@ -68,14 +68,14 @@ break;
 
 	case Altura_Alcanzada:
 	     Dato= BMP_280_Read();
-	 	UART_TrasmitSensor(Dato);
+	 	if(delayRead(&MyDelay[2])) UART_TrasmitSensor(Dato);
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, SET);
 		FlagMEF= Control_Alerta;
 		break;
 
 	case Alerta_Arriba:
 	     Dato= BMP_280_Read();
-	     UART_TrasmitSensor(Dato);
+	 	if(delayRead(&MyDelay[2])) if(delayRead(&MyDelay[2])) UART_TrasmitSensor(Dato);
 		if(delayRead(&MyDelay[0])) HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
 		FlagMEF= Control_Alerta;
 		break;
@@ -87,7 +87,7 @@ break;
 EstadoAlerta_t ControlAlerta(){
 	enum EstadoMef Control;
 	ReadSensor Dat=BMP_280_Read();
-if (Dat.AlturaSet/Dat.altura>=Limites[2]){
+if (Dat.AlturaSet/Dat.altura<=Limites[0]){
 	Control=Alerta_Abajo;
 	}
 else if(Dat.AlturaSet/Dat.altura>Limites[0] && Dat.AlturaSet/Dat.altura>Limites[1] ) {
@@ -98,7 +98,3 @@ else {
 }
 return Control;
 }
-void MEF_Init(){
-	flagDelay=true;
-	FlagMEF=Inicio;
-	}

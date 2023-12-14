@@ -103,19 +103,14 @@ int main(void)
   /* USER CODE BEGIN 2 */
   BMP_280_Init2();
  UART_Init2();
- debounceFSM_init();
  /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-if(readKey()){
-	MEF_Init();
-}
-else {
+
 MEF();
-}
 
     /* USER CODE END WHILE */
 

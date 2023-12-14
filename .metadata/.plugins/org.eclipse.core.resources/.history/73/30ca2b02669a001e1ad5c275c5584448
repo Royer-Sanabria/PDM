@@ -111,8 +111,8 @@ int main(void)
   while (1)
   {
 if(readKey()){
-	MEF_Init();
-}
+	MEF_Init()}
+
 else {
 MEF();
 }

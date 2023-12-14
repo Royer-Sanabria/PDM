@@ -87,7 +87,7 @@ break;
 EstadoAlerta_t ControlAlerta(){
 	enum EstadoMef Control;
 	ReadSensor Dat=BMP_280_Read();
-if (Dat.AlturaSet/Dat.altura>=Limites[2]){
+if (Dat.AlturaSet/Dat.altura<=Limites[0]){
 	Control=Alerta_Abajo;
 	}
 else if(Dat.AlturaSet/Dat.altura>Limites[0] && Dat.AlturaSet/Dat.altura>Limites[1] ) {
@@ -98,7 +98,3 @@ else {
 }
 return Control;
 }
-void MEF_Init(){
-	flagDelay=true;
-	FlagMEF=Inicio;
-	}

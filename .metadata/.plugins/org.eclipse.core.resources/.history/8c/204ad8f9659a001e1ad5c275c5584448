@@ -98,7 +98,3 @@ else {
 }
 return Control;
 }
-void MEF_Init(){
-	flagDelay=true;
-	FlagMEF=Inicio;
-	}

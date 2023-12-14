@@ -22,5 +22,4 @@ typedef enum EstadoMef EstadoAlerta_t;
 
 void MEF();
 EstadoAlerta_t ControlAlerta();
-void MEF_Init();
 #endif /* API_INC_MEF_H_ */

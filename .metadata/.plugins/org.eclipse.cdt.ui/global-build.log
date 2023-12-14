@@ -1,9 +1,9 @@
-05:21:08 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
+05:47:19 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
 make -j8 all 
 arm-none-eabi-gcc "../Drivers/API/Src/MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/MEF.d" -MT"Drivers/API/Src/MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/MEF.o"
 ../Drivers/API/Src/MEF.c: In function 'MEF':
-../Drivers/API/Src/MEF.c:41:21: warning: implicit declaration of function 'BMP_280_SetPoint' [-Wimplicit-function-declaration]
-   41 |                     BMP_280_SetPoint(AlturaSeteo.dato);
+../Drivers/API/Src/MEF.c:49:21: warning: implicit declaration of function 'BMP_280_SetPoint' [-Wimplicit-function-declaration]
+   49 |                     BMP_280_SetPoint(AlturaSeteo.dato);
       |                     ^~~~~~~~~~~~~~~~
 At top level:
 ../Drivers/API/Src/MEF.c:20:16: warning: 'Set_Altura' defined but not used [-Wunused-variable]
@@ -18,12 +18,115 @@ Finished building target: TP_FINAL_ALTURA.elf
 arm-none-eabi-size  TP_FINAL_ALTURA.elf 
 arm-none-eabi-objdump -h -S TP_FINAL_ALTURA.elf  > "TP_FINAL_ALTURA.list"
    text	   data	    bss	    dec	    hex	filename
-  38008	    484	   2428	  40920	   9fd8	TP_FINAL_ALTURA.elf
+  38080	    484	   2428	  40992	   a020	TP_FINAL_ALTURA.elf
 Finished building: default.size.stdout
  
 Finished building: TP_FINAL_ALTURA.list
  
-05:21:29 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
+05:48:48 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/MEF.d" -MT"Drivers/API/Src/MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/MEF.o"
+../Drivers/API/Src/MEF.c: In function 'MEF':
+../Drivers/API/Src/MEF.c:49:21: warning: implicit declaration of function 'BMP_280_SetPoint' [-Wimplicit-function-declaration]
+   49 |                     BMP_280_SetPoint(AlturaSeteo.dato);
+      |                     ^~~~~~~~~~~~~~~~
+At top level:
+../Drivers/API/Src/MEF.c:20:16: warning: 'Set_Altura' defined but not used [-Wunused-variable]
+   20 | static uint8_t Set_Altura;
+      |                ^~~~~~~~~~
+../Drivers/API/Src/MEF.c:19:13: warning: 'mensaje' defined but not used [-Wunused-variable]
+   19 | static char mensaje;
+      |             ^~~~~~~
+arm-none-eabi-gcc -o "TP_FINAL_ALTURA.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\PDM\TP_FINAL_ALTURA\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FINAL_ALTURA.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TP_FINAL_ALTURA.elf
+ 
+arm-none-eabi-size  TP_FINAL_ALTURA.elf 
+arm-none-eabi-objdump -h -S TP_FINAL_ALTURA.elf  > "TP_FINAL_ALTURA.list"
+   text	   data	    bss	    dec	    hex	filename
+  38128	    484	   2428	  41040	   a050	TP_FINAL_ALTURA.elf
+Finished building: default.size.stdout
+ 
+Finished building: TP_FINAL_ALTURA.list
+ 
+05:53:21 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
+make -j8 all 
+arm-none-eabi-size  TP_FINAL_ALTURA.elf 
+   text	   data	    bss	    dec	    hex	filename
+  38128	    484	   2428	  41040	   a050	TP_FINAL_ALTURA.elf
+Finished building: default.size.stdout
+ 
+05:53:51 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
+make -j8 all 
+arm-none-eabi-size  TP_FINAL_ALTURA.elf 
+   text	   data	    bss	    dec	    hex	filename
+  38128	    484	   2428	  41040	   a050	TP_FINAL_ALTURA.elf
+Finished building: default.size.stdout
+ 
+05:54:53 **** Incremental Build of configuration Debug for project Presion ****
+make -j8 all 
+arm-none-eabi-size  Presion.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31192	    476	   2380	  34048	   8500	Presion.elf
+Finished building: default.size.stdout
+ 
+05:55:32 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
+make -j8 all 
+arm-none-eabi-size  TP_FINAL_ALTURA.elf 
+   text	   data	    bss	    dec	    hex	filename
+  38128	    484	   2428	  41040	   a050	TP_FINAL_ALTURA.elf
+Finished building: default.size.stdout
+ 
+05:59:31 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/MEF.d" -MT"Drivers/API/Src/MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/MEF.o"
+../Drivers/API/Src/MEF.c: In function 'MEF':
+../Drivers/API/Src/MEF.c:49:21: warning: implicit declaration of function 'BMP_280_SetPoint' [-Wimplicit-function-declaration]
+   49 |                     BMP_280_SetPoint(AlturaSeteo.dato);
+      |                     ^~~~~~~~~~~~~~~~
+At top level:
+../Drivers/API/Src/MEF.c:20:16: warning: 'Set_Altura' defined but not used [-Wunused-variable]
+   20 | static uint8_t Set_Altura;
+      |                ^~~~~~~~~~
+../Drivers/API/Src/MEF.c:19:13: warning: 'mensaje' defined but not used [-Wunused-variable]
+   19 | static char mensaje;
+      |             ^~~~~~~
+arm-none-eabi-gcc -o "TP_FINAL_ALTURA.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\PDM\TP_FINAL_ALTURA\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FINAL_ALTURA.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TP_FINAL_ALTURA.elf
+ 
+arm-none-eabi-size  TP_FINAL_ALTURA.elf 
+arm-none-eabi-objdump -h -S TP_FINAL_ALTURA.elf  > "TP_FINAL_ALTURA.list"
+   text	   data	    bss	    dec	    hex	filename
+  38128	    484	   2428	  41040	   a050	TP_FINAL_ALTURA.elf
+Finished building: default.size.stdout
+ 
+Finished building: TP_FINAL_ALTURA.list
+ 
+06:01:57 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/MEF.d" -MT"Drivers/API/Src/MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/MEF.o"
+../Drivers/API/Src/MEF.c: In function 'MEF':
+../Drivers/API/Src/MEF.c:49:21: warning: implicit declaration of function 'BMP_280_SetPoint' [-Wimplicit-function-declaration]
+   49 |                     BMP_280_SetPoint(AlturaSeteo.dato);
+      |                     ^~~~~~~~~~~~~~~~
+At top level:
+../Drivers/API/Src/MEF.c:20:16: warning: 'Set_Altura' defined but not used [-Wunused-variable]
+   20 | static uint8_t Set_Altura;
+      |                ^~~~~~~~~~
+../Drivers/API/Src/MEF.c:19:13: warning: 'mensaje' defined but not used [-Wunused-variable]
+   19 | static char mensaje;
+      |             ^~~~~~~
+arm-none-eabi-gcc -o "TP_FINAL_ALTURA.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\PDM\TP_FINAL_ALTURA\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FINAL_ALTURA.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TP_FINAL_ALTURA.elf
+ 
+arm-none-eabi-size  TP_FINAL_ALTURA.elf 
+arm-none-eabi-objdump -h -S TP_FINAL_ALTURA.elf  > "TP_FINAL_ALTURA.list"
+   text	   data	    bss	    dec	    hex	filename
+  38128	    484	   2428	  41040	   a050	TP_FINAL_ALTURA.elf
+Finished building: default.size.stdout
+ 
+Finished building: TP_FINAL_ALTURA.list
+ 
+06:03:19 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c:54:19: warning: 'BUFFER_DATO' defined but not used [-Wunused-variable]
@@ -35,17 +138,17 @@ Finished building target: TP_FINAL_ALTURA.elf
 arm-none-eabi-size  TP_FINAL_ALTURA.elf 
 arm-none-eabi-objdump -h -S TP_FINAL_ALTURA.elf  > "TP_FINAL_ALTURA.list"
    text	   data	    bss	    dec	    hex	filename
-  37808	    484	   2404	  40696	   9ef8	TP_FINAL_ALTURA.elf
+  38112	    484	   2412	  41008	   a030	TP_FINAL_ALTURA.elf
 Finished building: default.size.stdout
  
 Finished building: TP_FINAL_ALTURA.list
  
-05:24:18 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
+06:05:49 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
 make -j8 all 
 arm-none-eabi-gcc "../Drivers/API/Src/MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/MEF.d" -MT"Drivers/API/Src/MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/MEF.o"
 ../Drivers/API/Src/MEF.c: In function 'MEF':
-../Drivers/API/Src/MEF.c:41:21: warning: implicit declaration of function 'BMP_280_SetPoint' [-Wimplicit-function-declaration]
-   41 |                     BMP_280_SetPoint(AlturaSeteo.dato);
+../Drivers/API/Src/MEF.c:49:21: warning: implicit declaration of function 'BMP_280_SetPoint' [-Wimplicit-function-declaration]
+   49 |                     BMP_280_SetPoint(AlturaSeteo.dato);
       |                     ^~~~~~~~~~~~~~~~
 At top level:
 ../Drivers/API/Src/MEF.c:20:16: warning: 'Set_Altura' defined but not used [-Wunused-variable]
@@ -60,27 +163,18 @@ Finished building target: TP_FINAL_ALTURA.elf
 arm-none-eabi-size  TP_FINAL_ALTURA.elf 
 arm-none-eabi-objdump -h -S TP_FINAL_ALTURA.elf  > "TP_FINAL_ALTURA.list"
    text	   data	    bss	    dec	    hex	filename
-  37928	    484	   2404	  40816	   9f70	TP_FINAL_ALTURA.elf
+  38048	    484	   2412	  40944	   9ff0	TP_FINAL_ALTURA.elf
 Finished building: default.size.stdout
  
 Finished building: TP_FINAL_ALTURA.list
  
-05:27:53 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
+06:07:35 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
 make -j8 all 
 arm-none-eabi-gcc "../Drivers/API/Src/MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/MEF.d" -MT"Drivers/API/Src/MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/MEF.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c:54:19: warning: 'BUFFER_DATO' defined but not used [-Wunused-variable]
-   54 | static ReadSensor BUFFER_DATO;
-      |                   ^~~~~~~~~~~
 ../Drivers/API/Src/MEF.c: In function 'MEF':
-../Drivers/API/Src/MEF.c:41:21: warning: implicit declaration of function 'BMP_280_SetPoint' [-Wimplicit-function-declaration]
-   41 |                     BMP_280_SetPoint(AlturaSeteo.dato);
+../Drivers/API/Src/MEF.c:49:21: warning: implicit declaration of function 'BMP_280_SetPoint' [-Wimplicit-function-declaration]
+   49 |                     BMP_280_SetPoint(AlturaSeteo.dato);
       |                     ^~~~~~~~~~~~~~~~
-../Drivers/API/Src/MEF.c:44:29: error: 'ControlAlert' undeclared (first use in this function); did you mean 'ControlAlerta'?
-   44 |                     FlagMEF=ControlAlert;
-      |                             ^~~~~~~~~~~~
-      |                             ControlAlerta
-../Drivers/API/Src/MEF.c:44:29: note: each undeclared identifier is reported only once for each function it appears in
 At top level:
 ../Drivers/API/Src/MEF.c:20:16: warning: 'Set_Altura' defined but not used [-Wunused-variable]
    20 | static uint8_t Set_Altura;
@@ -88,24 +182,206 @@ At top level:
 ../Drivers/API/Src/MEF.c:19:13: warning: 'mensaje' defined but not used [-Wunused-variable]
    19 | static char mensaje;
       |             ^~~~~~~
-make: *** [Drivers/API/Src/subdir.mk:34: Drivers/API/Src/MEF.o] Error 1
+arm-none-eabi-gcc -o "TP_FINAL_ALTURA.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\PDM\TP_FINAL_ALTURA\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FINAL_ALTURA.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TP_FINAL_ALTURA.elf
+ 
+arm-none-eabi-size  TP_FINAL_ALTURA.elf 
+arm-none-eabi-objdump -h -S TP_FINAL_ALTURA.elf  > "TP_FINAL_ALTURA.list"
+   text	   data	    bss	    dec	    hex	filename
+  38112	    484	   2412	  41008	   a030	TP_FINAL_ALTURA.elf
+Finished building: default.size.stdout
+ 
+Finished building: TP_FINAL_ALTURA.list
+ 
+06:09:20 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/MEF.d" -MT"Drivers/API/Src/MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/MEF.o"
+../Drivers/API/Src/MEF.c: In function 'MEF':
+../Drivers/API/Src/MEF.c:49:21: warning: implicit declaration of function 'BMP_280_SetPoint' [-Wimplicit-function-declaration]
+   49 |                     BMP_280_SetPoint(AlturaSeteo.dato);
+      |                     ^~~~~~~~~~~~~~~~
+At top level:
+../Drivers/API/Src/MEF.c:20:16: warning: 'Set_Altura' defined but not used [-Wunused-variable]
+   20 | static uint8_t Set_Altura;
+      |                ^~~~~~~~~~
+../Drivers/API/Src/MEF.c:19:13: warning: 'mensaje' defined but not used [-Wunused-variable]
+   19 | static char mensaje;
+      |             ^~~~~~~
+arm-none-eabi-gcc -o "TP_FINAL_ALTURA.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\PDM\TP_FINAL_ALTURA\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FINAL_ALTURA.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TP_FINAL_ALTURA.elf
+ 
+arm-none-eabi-size  TP_FINAL_ALTURA.elf 
+arm-none-eabi-objdump -h -S TP_FINAL_ALTURA.elf  > "TP_FINAL_ALTURA.list"
+   text	   data	    bss	    dec	    hex	filename
+  38112	    488	   2416	  41016	   a038	TP_FINAL_ALTURA.elf
+Finished building: default.size.stdout
+ 
+Finished building: TP_FINAL_ALTURA.list
+ 
+06:10:57 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/MEF.d" -MT"Drivers/API/Src/MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/MEF.o"
+../Drivers/API/Src/MEF.c: In function 'MEF':
+../Drivers/API/Src/MEF.c:49:21: warning: implicit declaration of function 'BMP_280_SetPoint' [-Wimplicit-function-declaration]
+   49 |                     BMP_280_SetPoint(AlturaSeteo.dato);
+      |                     ^~~~~~~~~~~~~~~~
+At top level:
+../Drivers/API/Src/MEF.c:20:16: warning: 'Set_Altura' defined but not used [-Wunused-variable]
+   20 | static uint8_t Set_Altura;
+      |                ^~~~~~~~~~
+../Drivers/API/Src/MEF.c:19:13: warning: 'mensaje' defined but not used [-Wunused-variable]
+   19 | static char mensaje;
+      |             ^~~~~~~
+arm-none-eabi-gcc -o "TP_FINAL_ALTURA.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\PDM\TP_FINAL_ALTURA\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FINAL_ALTURA.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TP_FINAL_ALTURA.elf
+ 
+arm-none-eabi-size  TP_FINAL_ALTURA.elf 
+arm-none-eabi-objdump -h -S TP_FINAL_ALTURA.elf  > "TP_FINAL_ALTURA.list"
+   text	   data	    bss	    dec	    hex	filename
+  38112	    488	   2416	  41016	   a038	TP_FINAL_ALTURA.elf
+Finished building: default.size.stdout
+ 
+Finished building: TP_FINAL_ALTURA.list
+ 
+06:12:55 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/MEF.d" -MT"Drivers/API/Src/MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/MEF.o"
+../Drivers/API/Src/MEF.c: In function 'MEF':
+../Drivers/API/Src/MEF.c:49:21: warning: implicit declaration of function 'BMP_280_SetPoint' [-Wimplicit-function-declaration]
+   49 |                     BMP_280_SetPoint(AlturaSeteo.dato);
+      |                     ^~~~~~~~~~~~~~~~
+At top level:
+../Drivers/API/Src/MEF.c:20:16: warning: 'Set_Altura' defined but not used [-Wunused-variable]
+   20 | static uint8_t Set_Altura;
+      |                ^~~~~~~~~~
+../Drivers/API/Src/MEF.c:19:13: warning: 'mensaje' defined but not used [-Wunused-variable]
+   19 | static char mensaje;
+      |             ^~~~~~~
+arm-none-eabi-gcc -o "TP_FINAL_ALTURA.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\PDM\TP_FINAL_ALTURA\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FINAL_ALTURA.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TP_FINAL_ALTURA.elf
+ 
+arm-none-eabi-size  TP_FINAL_ALTURA.elf 
+arm-none-eabi-objdump -h -S TP_FINAL_ALTURA.elf  > "TP_FINAL_ALTURA.list"
+   text	   data	    bss	    dec	    hex	filename
+  38104	    488	   2416	  41008	   a030	TP_FINAL_ALTURA.elf
+Finished building: default.size.stdout
+ 
+Finished building: TP_FINAL_ALTURA.list
+ 
+06:20:29 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/MEF.d" -MT"Drivers/API/Src/MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/MEF.o"
+../Drivers/API/Src/MEF.c: In function 'MEF':
+../Drivers/API/Src/MEF.c:49:21: warning: implicit declaration of function 'BMP_280_SetPoint' [-Wimplicit-function-declaration]
+   49 |                     BMP_280_SetPoint(AlturaSeteo.dato);
+      |                     ^~~~~~~~~~~~~~~~
+At top level:
+../Drivers/API/Src/MEF.c:20:16: warning: 'Set_Altura' defined but not used [-Wunused-variable]
+   20 | static uint8_t Set_Altura;
+      |                ^~~~~~~~~~
+../Drivers/API/Src/MEF.c:19:13: warning: 'mensaje' defined but not used [-Wunused-variable]
+   19 | static char mensaje;
+      |             ^~~~~~~
+arm-none-eabi-gcc -o "TP_FINAL_ALTURA.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\PDM\TP_FINAL_ALTURA\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FINAL_ALTURA.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TP_FINAL_ALTURA.elf
+ 
+arm-none-eabi-size  TP_FINAL_ALTURA.elf 
+arm-none-eabi-objdump -h -S TP_FINAL_ALTURA.elf  > "TP_FINAL_ALTURA.list"
+   text	   data	    bss	    dec	    hex	filename
+  38056	    488	   2416	  40960	   a000	TP_FINAL_ALTURA.elf
+Finished building: default.size.stdout
+ 
+Finished building: TP_FINAL_ALTURA.list
+ 
+06:42:22 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/MEF.d" -MT"Drivers/API/Src/MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/MEF.o"
+../Drivers/API/Src/MEF.c: In function 'MEF':
+../Drivers/API/Src/MEF.c:49:21: warning: implicit declaration of function 'BMP_280_SetPoint' [-Wimplicit-function-declaration]
+   49 |                     BMP_280_SetPoint(AlturaSeteo.dato);
+      |                     ^~~~~~~~~~~~~~~~
+At top level:
+../Drivers/API/Src/MEF.c:20:16: warning: 'Set_Altura' defined but not used [-Wunused-variable]
+   20 | static uint8_t Set_Altura;
+      |                ^~~~~~~~~~
+../Drivers/API/Src/MEF.c:19:13: warning: 'mensaje' defined but not used [-Wunused-variable]
+   19 | static char mensaje;
+      |             ^~~~~~~
+arm-none-eabi-gcc -o "TP_FINAL_ALTURA.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\PDM\TP_FINAL_ALTURA\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FINAL_ALTURA.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TP_FINAL_ALTURA.elf
+ 
+arm-none-eabi-size  TP_FINAL_ALTURA.elf 
+arm-none-eabi-objdump -h -S TP_FINAL_ALTURA.elf  > "TP_FINAL_ALTURA.list"
+   text	   data	    bss	    dec	    hex	filename
+  38056	    488	   2416	  40960	   a000	TP_FINAL_ALTURA.elf
+Finished building: default.size.stdout
+ 
+Finished building: TP_FINAL_ALTURA.list
+ 
+06:48:47 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/MEF.d" -MT"Drivers/API/Src/MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/MEF.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Drivers/API/Src/MEF.c: In function 'MEF':
+../Drivers/API/Src/MEF.c:49:21: warning: implicit declaration of function 'BMP_280_SetPoint' [-Wimplicit-function-declaration]
+   49 |                     BMP_280_SetPoint(AlturaSeteo.dato);
+      |                     ^~~~~~~~~~~~~~~~
+At top level:
+../Drivers/API/Src/MEF.c:20:16: warning: 'Set_Altura' defined but not used [-Wunused-variable]
+   20 | static uint8_t Set_Altura;
+      |                ^~~~~~~~~~
+../Drivers/API/Src/MEF.c:19:13: warning: 'mensaje' defined but not used [-Wunused-variable]
+   19 | static char mensaje;
+      |             ^~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:106:2: warning: implicit declaration of function 'debounceFSM_init' [-Wimplicit-function-declaration]
+  106 |  debounceFSM_init();
+      |  ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:113:4: warning: implicit declaration of function 'readKey' [-Wimplicit-function-declaration]
+  113 | if(readKey()){
+      |    ^~~~~~~
+../Core/Src/main.c:114:19: error: expected ';' before '}' token
+  114 |         MEF_Init()}
+      |                   ^
+      |                   ;
+At top level:
+../Core/Src/main.c:54:19: warning: 'BUFFER_DATO' defined but not used [-Wunused-variable]
+   54 | static ReadSensor BUFFER_DATO;
+      |                   ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
 make: *** Waiting for unfinished jobs....
 "make -j8 all" terminated with exit code 2. Build might be incomplete.
-05:29:25 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
+06:49:01 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
 make -j8 all 
-arm-none-eabi-gcc "../Drivers/API/Src/MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/MEF.d" -MT"Drivers/API/Src/MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/MEF.o"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Drivers/API/Src/MEF.c: In function 'MEF':
-../Drivers/API/Src/MEF.c:41:21: warning: implicit declaration of function 'BMP_280_SetPoint' [-Wimplicit-function-declaration]
-   41 |                     BMP_280_SetPoint(AlturaSeteo.dato);
-      |                     ^~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:106:2: warning: implicit declaration of function 'debounceFSM_init' [-Wimplicit-function-declaration]
+  106 |  debounceFSM_init();
+      |  ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:113:4: warning: implicit declaration of function 'readKey' [-Wimplicit-function-declaration]
+  113 | if(readKey()){
+      |    ^~~~~~~
+../Core/Src/main.c:114:19: error: expected ';' before ':' token
+  114 |         MEF_Init():
+      |                   ^
+      |                   ;
 At top level:
-../Drivers/API/Src/MEF.c:20:16: warning: 'Set_Altura' defined but not used [-Wunused-variable]
-   20 | static uint8_t Set_Altura;
-      |                ^~~~~~~~~~
-../Drivers/API/Src/MEF.c:19:13: warning: 'mensaje' defined but not used [-Wunused-variable]
-   19 | static char mensaje;
-      |             ^~~~~~~
+../Core/Src/main.c:54:19: warning: 'BUFFER_DATO' defined but not used [-Wunused-variable]
+   54 | static ReadSensor BUFFER_DATO;
+      |                   ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+06:49:18 **** Incremental Build of configuration Debug for project TP_FINAL_ALTURA ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Inc" -I"C:/Users/USUARIO/Desktop/Royer/universidad/PDM1/PDM/TP_FINAL_ALTURA/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:106:2: warning: implicit declaration of function 'debounceFSM_init' [-Wimplicit-function-declaration]
+  106 |  debounceFSM_init();
+      |  ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:113:4: warning: implicit declaration of function 'readKey' [-Wimplicit-function-declaration]
+  113 | if(readKey()){
+      |    ^~~~~~~
+At top level:
 ../Core/Src/main.c:54:19: warning: 'BUFFER_DATO' defined but not used [-Wunused-variable]
    54 | static ReadSensor BUFFER_DATO;
       |                   ^~~~~~~~~~~
@@ -115,7 +391,7 @@ Finished building target: TP_FINAL_ALTURA.elf
 arm-none-eabi-size  TP_FINAL_ALTURA.elf 
 arm-none-eabi-objdump -h -S TP_FINAL_ALTURA.elf  > "TP_FINAL_ALTURA.list"
    text	   data	    bss	    dec	    hex	filename
-  37936	    484	   2404	  40824	   9f78	TP_FINAL_ALTURA.elf
+  38464	    492	   2428	  41384	   a1a8	TP_FINAL_ALTURA.elf
 Finished building: default.size.stdout
  
 Finished building: TP_FINAL_ALTURA.list
