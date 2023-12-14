@@ -61,8 +61,8 @@ all: main-build
 main-build: Presion.elf secondary-outputs
 
 # Tool invocations
-Presion.elf Presion.map: $(OBJS) $(USER_OBJS) C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\Presion\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Presion.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\Presion\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Presion.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Presion.elf Presion.map: $(OBJS) $(USER_OBJS) C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\PDM\Presion\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Presion.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\USUARIO\Desktop\Royer\universidad\PDM1\PDM\Presion\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Presion.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

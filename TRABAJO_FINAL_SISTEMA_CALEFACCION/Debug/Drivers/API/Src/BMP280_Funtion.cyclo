@@ -1,3 +1,0 @@
-../Drivers/API/Src/BMP280_Funtion.c:30:6:BMP_280_Init2	2
-../Drivers/API/Src/BMP280_Funtion.c:41:12:BMP_280_Read	3
-../Drivers/API/Src/BMP280_Funtion.c:62:12:BMP_280_ConfigP0	1

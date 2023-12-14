@@ -1,4 +1,0 @@
-../Drivers/API/Src/API_UART.c:25:6:UART_TrasmitSensor	1
-../Drivers/API/Src/API_UART.c:30:6:UART_Init2	1
-../Drivers/API/Src/API_UART.c:35:12:UART_Read	2
-../Drivers/API/Src/API_UART.c:48:6:HAL_UART_RxCpltCallback	1

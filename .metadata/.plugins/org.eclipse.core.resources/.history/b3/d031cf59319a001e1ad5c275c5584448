@@ -1,0 +1,36 @@
+/*
+ * MEF.c
+ *
+ *  Created on: Dec 14, 2023
+ *      Author: Royer Sanabria
+ */
+#include "main.h"
+#include "BMP280_Funtion.h"
+#include "API_Delay.h"
+#include "API_UART.h"
+#include "MEF.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+
+
+
+void MEF(){
+	Estado FlagMEF=Inicio;
+	switch (FlagMEF)
+
+	case Inicio:
+char mensajeAlturaSeteo[]={"Indique la altura de seteo: "};
+HAL_UART_Transmit(&huart2, (uint8_t *)mensajeAltura, strlen(mensajeAlturaSeteo), 100);
+FlagMEF=Altura_Seteo;
+break
+
+case Altura_Seteo:
+
+break;
+
+
+	default:
+	FlagMEF=Altura_Seteo;
+}

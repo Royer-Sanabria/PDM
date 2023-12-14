@@ -1,0 +1,5 @@
+../Drivers/API/Src/API_UART.c:25:6:UART_TrasmitSensor	56	static
+../Drivers/API/Src/API_UART.c:31:6:UART_TrasmitMessage	16	static
+../Drivers/API/Src/API_UART.c:35:6:UART_Init2	8	static
+../Drivers/API/Src/API_UART.c:40:12:UART_Read	16	static
+../Drivers/API/Src/API_UART.c:53:6:HAL_UART_RxCpltCallback	16	static

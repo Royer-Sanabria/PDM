@@ -1,0 +1,65 @@
+/*
+ * BMP280_Funtion.c
+ *
+ *  Created on: Dec 12, 2023
+ *      Author: Royer Sanabria
+ */
+
+#include "bmp280.h"
+#include "BMP280_Funtion.h"
+#include "main.h"
+#include "API_Delay.h"
+#include "math.h"
+
+#include <stdint.h>
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define L  0.0065  // K/m
+#define g  9.80665  // m/s^2
+#define M  0.02896  // kg/mol
+#define R  8.314  // J/(mol·K)
+#define P0 101325  // Pascales 52=0
+
+static BMP280_HandleTypedef bmp280;
+static float Point0;
+
+
+void BMP_280_Init2(I2C_HandleTypeDef hi2c1){
+	Point0=0;
+	 bmp280_init_default_params(&bmp280.params);
+		bmp280.addr = BMP280_I2C_ADDRESS_0;
+		bmp280.i2c = &hi2c1;
+		if (!bmp280_init(&bmp280, &bmp280.params)) {
+			Error_Handler();
+			}
+		HAL_Delay(150);
+		}
+
+ReadSensor BMP_280_Read(I2C_HandleTypeDef hi2c1){
+float pressure, temperature, humidity;
+	ReadSensor Dato;
+	  	  if (!bmp280_read_float(&bmp280, &temperature, &pressure, &humidity)) {
+	  	  	  Error_Handler();
+	  	  		}
+	  	 float temperatura_kelvin = temperature + 273.15;
+	  	    // Cálculo de la altitud
+	  	    float altitud = (temperatura_kelvin / L) * (1 - exp((R * L) / (g * M) * (log(pressure) - log(P0))));
+	  	  Dato.Temperatura=temperature;
+	  	  Dato.Presion=pressure;
+	  	  if(altitud-Point0<0){
+	  		  altitud=0;
+	  	  }
+	  	  else {
+	  		  Dato.altura=altitud-Point0;
+	  	  }
+
+return Dato;
+}
+
+void BMP_280_ConfigP0(I2C_HandleTypeDef hi2c1){
+	ReadSensor Dato= BMP_280_Read(hi2c1);
+	Point0=Dato.altura;
+	}
